@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.php.debug.core.launching.webPageLaunch">
 <booleanAttribute key="auto_generated_url" value="true"/>
-<stringAttribute key="base_url" value="http://localhost/sonnet1/debug.php"/>
+<stringAttribute key="base_url" value="http://localhost/dev/sonnet1/debug.php"/>
 <stringAttribute key="debugOutputEncoding" value="UTF-8"/>
 <stringAttribute key="debugPages" value="debugAllPages"/>
 <stringAttribute key="debugTransferEncoding" value="UTF-8"/>
 <stringAttribute key="file_name" value="/sonnet1/debug.php"/>
-<booleanAttribute key="firstLineBreakpoint" value="false"/>
+<booleanAttribute key="firstLineBreakpoint" value="true"/>
 <stringAttribute key="name" value="Default PHP Web Server"/>
 <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
 <listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
