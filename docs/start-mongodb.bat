@@ -1,0 +1,1 @@
+start RunHiddenConsole.exe d:\mongo\bin\mongod --dbpath D:\mongo\data
