@@ -11,10 +11,10 @@ $loader->registerNamespaces(array(
     'Application'                => __DIR__,
     'Bundle'                     => __DIR__,
     'Symfony'                    => $vendorDir.'/Symfony/src',
-    'Doctrine\Common'            => $vendorDir.'/Doctrine/lib/vendor/doctrine-common/lib',
+    'Doctrine\Common'            => $vendorDir.'/doctrine-common/lib',
     'Doctrine\DBAL'              => $vendorDir.'/doctrine-dbal/lib',
     'Doctrine'                   => $vendorDir.'/Doctrine/lib',
-    //'Doctrine\ODM\MongoDB'       => $vendorDir.'/doctrine-mongodb/lib',
+    'Doctrine\ODM\MongoDB'       => $vendorDir.'/doctrine-mongodb/lib',
     'Zend'                       => $vendorDir.'/zend/library',
 ));
 $loader->register();

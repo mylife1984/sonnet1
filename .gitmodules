@@ -10,3 +10,6 @@
 [submodule "src/vendor/doctrine-mongodb"]
 	path = src/vendor/doctrine-mongodb
 	url = git://github.com/doctrine/mongodb-odm.git
+[submodule "src/vendor/doctrine-common"]
+	path = src/vendor/doctrine-common
+	url = git://github.com/doctrine/common.git
