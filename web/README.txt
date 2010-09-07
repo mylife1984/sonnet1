@@ -1,7 +1,7 @@
 README
 ======
 
-moadmin.php
-http://code.google.com/p/phpmoadmin-mongodb-admin-tool-for-php/downloads/detail?name=phpmoadmin.zip&can=2&q=
+rockmongo
+http://code.google.com/p/rock-php/downloads/detail?name=rockmongo-v1.0.7.r87.zip&can=2&q=
 
 -- END --
