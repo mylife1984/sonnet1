@@ -10,3 +10,6 @@
 [submodule "src/vendor/doctrine-common"]
 	path = src/vendor/doctrine-common
 	url = git://github.com/doctrine/common.git
+[submodule "src/vendor/doctrine-dbal"]
+	path = src/vendor/doctrine-dbal
+	url = git://github.com/doctrine/dbal.git
