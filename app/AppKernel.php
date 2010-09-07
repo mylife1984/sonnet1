@@ -20,10 +20,10 @@ class AppKernel extends Kernel
 
             // enable third-party bundles
             new Symfony\Bundle\ZendBundle\ZendBundle(),
-            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
+            //new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
             new Symfony\Bundle\DoctrineMongoDBBundle\DoctrineMongoDBBundle(),
-            new Symfony\Bundle\TwigBundle\TwigBundle(),
+            //new Symfony\Bundle\TwigBundle\TwigBundle(),
 
             // register your bundles
             new Application\HelloBundle\HelloBundle(),
@@ -41,7 +41,7 @@ class AppKernel extends Kernel
         return array(
             'Application'     => __DIR__.'/../src/Application',
             'Bundle'          => __DIR__.'/../src/Bundle',
-            'Symfony\\Bundle' => __DIR__.'/../../symfony2/symfony/src/Symfony/Bundle',
+            'Symfony\\Bundle' => __DIR__.'/../src/vendor/Symfony/src/Symfony/Bundle',
         );
     }
 
