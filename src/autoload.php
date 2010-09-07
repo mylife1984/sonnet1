@@ -15,6 +15,6 @@ $loader->registerNamespaces(array(
     'Doctrine\DBAL'              => $vendorDir.'/doctrine-dbal/lib',
     'Doctrine'                   => $vendorDir.'/Doctrine/lib',
     //'Doctrine\ODM\MongoDB'       => $vendorDir.'/doctrine-mongodb/lib',
-    'Zend'                       => $vendorDir.'/Zend/library',
+    'Zend'                       => $vendorDir.'/zend/library',
 ));
 $loader->register();

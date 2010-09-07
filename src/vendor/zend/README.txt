@@ -1,0 +1,1 @@
+从 symfony-sandbox 中直接拷贝而来。
