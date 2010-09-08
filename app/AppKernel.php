@@ -27,7 +27,8 @@ class AppKernel extends Kernel
 
             // register your bundles
             new Application\HelloBundle\HelloBundle(),
-        );
+            new Application\SqlDemoBundle\SqlDemoBundle(),
+            );
 
         if ($this->isDebug()) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();

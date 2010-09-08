@@ -8,7 +8,9 @@ $collection->addRoute('homepage', new Route('/', array(
     '_controller' => 'FrameworkBundle:Default:index',
 )));
 
-//HelloBundle
+//Your Bundle
 $collection->addCollection($loader->import("HelloBundle/Resources/config/routing.php"));
+
+$collection->addCollection($loader->import("SqlDemoBundle/Resources/config/routing.php"));
 
 return $collection;
