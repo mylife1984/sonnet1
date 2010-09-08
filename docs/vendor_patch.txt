@@ -1,0 +1,13 @@
+对Vendor库的修正
+================
+
+2010-09-08
+----------
+
+  根据：http://groups.google.com/group/symfony-devs/browse_thread/thread/df946c4d9ddb1ef6
+  
+  修改 vendor/doctrine-dbal/lib/Doctrine/DBAL/Schema/SqliteSchemaManager.php
+       createDatabase 方法。
+       
+  -- END --
+       
