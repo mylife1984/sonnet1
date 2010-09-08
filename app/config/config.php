@@ -17,11 +17,17 @@ $container->loadFromExtension('web', 'templating', array(
 ));
 
 // Doctrine Configuration
+//$container->loadFromExtension('doctrine', 'dbal', array(
+//	'driver'   => 'PDOSqlite',
+//    'dbname'   => $rootDir . '\db.sqlite',
+//    'user'     => '',
+//    'password' => '',
+//));
 $container->loadFromExtension('doctrine', 'dbal', array(
-	'driver'   => 'PDOSqlite',
-    'dbname'   => $rootDir . '\db.sqlite',
-    'user'     => '',
-    'password' => '',
+	'driver'   => 'PDOMySql',
+    'dbname'   => 'sonnet1',
+    'user'     => 'root',
+    'password' => '123456',
 ));
 $container->loadFromExtension('doctrine', 'orm');
 
