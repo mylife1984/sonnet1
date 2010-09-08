@@ -1,0 +1,18 @@
+控制台命令一览
+=============
+
+ -- 创建 Bundle
+
+	php console init:bundle "Bundle\\GuestbookBundle"
+
+ -- 创建库
+ 
+    php console doctrine:database:create
+ 
+ -- 创建表
+ 
+    php console doctrine:schema:create
+	
+
+    -- END --
+
