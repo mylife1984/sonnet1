@@ -5,6 +5,10 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class HelloControllerTest extends WebTestCase
 {
+	/**
+	 * @group testIndex
+	 * phpunit -c app --group testIndex src/Application/HelloBundle/Tests/Controller/HelloControllerTest.php
+	 */
 	public function testIndex()
 	{
 		$client = $this->createClient();

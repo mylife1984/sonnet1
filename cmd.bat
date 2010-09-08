@@ -1,0 +1,1 @@
+C:\WINDOWS\system32\cmd.exe /K start cd /D "D:\dev-php2\sonnet1"
