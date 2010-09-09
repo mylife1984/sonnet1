@@ -1,0 +1,7 @@
+sql_demo:
+    pattern:  /sql/:name
+    defaults: { _controller: SqlDemoBundle:SqlDemo:index }
+
+sql_add:
+    pattern:  /sql/add/:name
+    defaults: { _controller: SqlDemoBundle:SqlDemo:add }

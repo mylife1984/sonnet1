@@ -1,0 +1,40 @@
+parameters: 
+    kernel.include_core_classes: false
+
+kernel.config:
+    charset:       UTF-8
+    error_handler: null
+
+kernel.session: ~
+
+web.config:
+  esi: ~
+  router: { resource: "%kernel.root_dir%/config/routing.yml" }
+  validation: { enabled: true, annotations: true }
+
+web.templating:
+    escaping:       htmlspecialchars
+
+zend.logger:
+  priority: info
+  path:     %kernel.root_dir%/logs/%kernel.environment%.log
+
+doctrine.dbal:
+  connections:
+    default:
+      dbname:                       sonnet1
+      user:                         root
+      password:                     123456
+
+doctrine.orm:
+  auto_generate_proxy_classes:      true
+  metadata_cache_driver:            apc
+  result_cache_driver:              apc
+  query_cache_driver:               apc
+
+doctrine_odm.mongodb:
+  auto_generate_proxy_classes:      true
+  server:                           mongodb://localhost:27017
+  options:
+    connect:                        true
+  metadata_cache_driver:            apc

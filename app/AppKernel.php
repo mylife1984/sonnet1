@@ -48,8 +48,16 @@ class AppKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.php');
+        $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
     }
+    
+    public function registerRoutes()
+    {
+        $loader = new RoutingLoader($this->getBundleDirs());
+
+        return $loader->load(__DIR__.'/config/routing.yml');
+    }
+    
 }
 #EOP
 
