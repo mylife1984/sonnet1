@@ -1,6 +1,8 @@
 <?php
 namespace Application\SqlDemoBundle\Tests\Controller;
 
+use Application\SqlDemoBundle\Entity\User;
+
 use Application\SqlDemoBundle\Tests\SqlDemoTestCase;
 
 class SqlDemoControllerTest extends SqlDemoTestCase
@@ -27,21 +29,19 @@ class SqlDemoControllerTest extends SqlDemoTestCase
 	 */
 	public function testAdd()
 	{
-		#$crawler = $this->client->request('GET', '/sql/add/Fabien');
-		#$this->assertTrue($this->client->getResponse()->isSuccessful());
-
-		#$user = $this->em->createQuery('select u from SqlDemoBundle:User where id = ?', 36);
-		#echo var_dump($user);
-        #$user->setName('new body');
+		$em = $this->getEm();
+    	$conn = $em->getConnection();
+		
+		$crawler = $this->client->request('GET', '/sql/add/Fabien');
+		$this->assertTrue($this->client->getResponse()->isSuccessful());
+		
+    	#$user = new User();
+        #$user->setName("user2");
+        #$em->persist($user);
         #$em->flush();
-        		
-		#$q = $this->em->createQuery('select u from Application\SqlDemoBundle\Entity\User u');
-		#echo var_dump($q->getFirstResult());
-		#$this->assertTrue($user[0]->getType() instanceof User);
-
-		#$this->assertEquals(1, count($result));
-		#$this->assertEquals($result[0]->getName(),"Fabien");
-
+    	
+		$stmt = $conn->executeQuery('SELECT * FROM t_user');
+		$this->assertEquals(1, $stmt->rowCount());
 	}
 
 }

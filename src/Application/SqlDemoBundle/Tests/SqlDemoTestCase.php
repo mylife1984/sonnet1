@@ -23,7 +23,7 @@ class SqlDemoTestCase extends SonnetBaseTestCase
 		$conn->executeUpdate('DELETE FROM t_user');
 
 		//user 1
-    	$user = new User;
+    	$user = new User();
         $user->setName("user1");
         $em->persist($user);
         $em->flush();

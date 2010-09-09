@@ -14,12 +14,12 @@ class SqlDemoController extends Controller
     
     public function addAction($name)
     {
-    	$user = new User();
-        $user->setName($name);
-
-        $em = $this->container->get('doctrine.orm.entity_manager');
-        $em->persist($user);
-        $em->flush();
+        #$em = $this->container->getDoctrine_Orm_DefaultEntityManagerService();
+    	
+    	#$user = new User();
+        #$user->setName($name);
+        #$em->persist($user);
+        #$em->flush();
         
         return $this->render('SqlDemoBundle:sql:add', array('name' => $name));
     }
