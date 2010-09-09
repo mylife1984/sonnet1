@@ -8,8 +8,6 @@
  -- 创建表
  
     php console doctrine:schema:create
-    
-    问题：能执行成功，但没有在库中创建表(仅对sqlite3有错）
 	
 
     -- END --

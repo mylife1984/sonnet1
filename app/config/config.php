@@ -1,6 +1,4 @@
 <?php
-$rootDir = dirname(dirname(__DIR__));
-
 $container->loadFromExtension('kernel', 'config', array(
     'charset'       => 'UTF-8',
     'error_handler' => null,
@@ -15,19 +13,4 @@ $container->loadFromExtension('web', 'templating', array(
     'escaping'       => "htmlspecialchars",
 #    'assets_version' => "SomeVersionScheme",
 ));
-
-// Doctrine Configuration
-$container->loadFromExtension('doctrine', 'dbal', array(
-	'driver'   => 'PDOSqlite',
-    'path'   => $rootDir . '\db.sqlite',
-    'user'     => '',
-    'password' => '',
-));
-//$container->loadFromExtension('doctrine', 'dbal', array(
-//	'driver'   => 'PDOMySql',
-//    'dbname'   => 'sonnet1',
-//    'user'     => 'root',
-//    'password' => '123456',
-//));
-$container->loadFromExtension('doctrine', 'orm');
 

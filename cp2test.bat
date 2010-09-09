@@ -1,0 +1,1 @@
+copy db.sqlite db_test.sqlite
