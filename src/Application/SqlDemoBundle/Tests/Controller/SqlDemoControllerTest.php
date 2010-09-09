@@ -1,30 +1,13 @@
 <?php
 namespace Application\SqlDemoBundle\Tests\Controller;
 
-use Doctrine\ORM\Query\ResultSetMapping;
+use Application\SqlDemoBundle\Tests\SqlDemoTestCase;
 
-use Application\SqlDemoBundle\Entity\User;
-
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-
-class SqlDemoControllerTest extends WebTestCase
+class SqlDemoControllerTest extends SqlDemoTestCase
 {
-	protected $client;
-	protected $em;
-
 	protected function setUp()
 	{
-		$this->client = $this->createClient();
-		$container = $this->client->getContainer();
-		$this->em = $container->get('doctrine.orm.entity_manager');
-
-		#$conn = $this->em->getConnection();
-		#$conn->executeUpdate('DELETE FROM t_user');
-	}
-
-	protected function tearDown()
-	{
-		 
+		$this->prepareTables();
 	}
 
 	/**
@@ -33,7 +16,8 @@ class SqlDemoControllerTest extends WebTestCase
 	 */
 	public function testIndex()
 	{
-		$crawler = $this->client->request('GET', '/sql/Fabien');
+		$client = $this->createClient();
+		$crawler = $client->request('GET', '/sql/Fabien');
 		$this->assertTrue($crawler->filter('html:contains("Sql Demo for Fabien")')->count() > 0);
 	}
 
