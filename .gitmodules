@@ -1,0 +1,3 @@
+[submodule "vendor/li3"]
+	path = vendor/li3
+	url = code@rad-dev.org:lithium.git
