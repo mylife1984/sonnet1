@@ -4,16 +4,19 @@ namespace app\controllers;
 use app\models\Post;
  
 class PostsController extends \lithium\action\Controller {
-    public function index() {
+	
+    public function show_post_list() {
+    	
+    	#获取指定页的全部记录
         $page = 1;
         $limit = 2;
         $order = 'created desc';
  
-        if (isset($this->request->params['page'])) {
-            $page = $this->request->params['page'];
+        if (isset($this->request->query['page'])) {
+            $page = $this->request->query['page'];
  
-            if (!empty($this->request->params['limit'])) {
-                $limit = $this->request->params['limit'];
+            if (!empty($this->request->query['limit'])) {
+                $limit = $this->request->query['limit'];
             }
         }
  
@@ -23,9 +26,13 @@ class PostsController extends \lithium\action\Controller {
  
         $posts = Post::find('all', compact('conditions', 'limit', 'offset', 'order'))->to('array');
  
+        #呈现	
         $title = 'Home';
- 
-        return compact('posts', 'limit', 'page', 'total','total_page','title');
+        $data = compact('posts', 'limit', 'page', 'total','total_page','title');
+        $layout = 'default';
+        $template = 'list';
+        
+		$this->render(compact('layout','data','template'));        
     }
 }
 ?>

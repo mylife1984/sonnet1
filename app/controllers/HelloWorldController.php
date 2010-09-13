@@ -5,7 +5,7 @@ namespace app\controllers;
 class HelloWorldController extends \lithium\action\Controller {
 
 	public function index() {
-		$this->render(array('layout' => false));
+		$this->render(array('layout' => false,'template' => 'index'));
 	}
 
 	public function to_string() {

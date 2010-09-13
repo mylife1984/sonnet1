@@ -9,37 +9,13 @@
 use lithium\net\http\Router;
 use lithium\core\Environment;
 
-/**
- * Here, we are connecting '/' (base path) to controller called 'Pages',
- * its action called 'view', and we pass a param to select the view file
- * to use (in this case, /app/views/pages/home.html.php)...
- */
+#-- home
 Router::connect('/', array('Pages::view', 'args' => array('home')));
 
-/**
- * ...and connect the rest of 'Pages' controller's urls.
- */
-Router::connect('/pages/{:args}', 'Pages::view');
+#-- hello
+Router::connect('/hello', array('HelloWorld::index'));
 
-/**
- * Connect the testing routes.
- */
-if (!Environment::is('production')) {
-	Router::connect('/test/{:args}', array('controller' => 'lithium\test\Controller'));
-	Router::connect('/test', array('controller' => 'lithium\test\Controller'));
-}
-
-Router::connect('/hello', array('controller' => 'HelloWorld', 'action' => 'index'));
-
-/**
- * Finally, connect the default routes.
- */
-Router::connect('/{:controller}/{:action}/{:id:[0-9]+}.{:type}', array('id' => null));
-//Router::connect('/{:controller}/{:action}/{:id:[0-9]+}');
- 
-Router::connect('/{:controller}/{:action}/page:{:page:[0-9]+}');
-Router::connect('/{:controller}/{:action}/page:{:page}/limit:{:limit}');
- 
-Router::connect('/{:controller}/{:action}/{:args}');
+#-- post crud
+Router::connect('/posts', array('Posts::show_post_list'));
 
 ?>
