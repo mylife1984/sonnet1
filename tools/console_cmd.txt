@@ -1,22 +1,6 @@
 控制台命令一览
 =============
 
- -- 创建 Bundle
-
-	php console init:bundle "Bundle\\GuestbookBundle"
-
--- 创建数据库
- 
-    php app\console-test doctrine:database:create
-    
-    php app\console-test doctrine:database:drop
-
- -- 创建表
- 
-    php app\console doctrine:schema:create
-	
-    php app\console-test doctrine:schema:create
-    
     
 
     -- END --

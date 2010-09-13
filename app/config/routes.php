@@ -16,6 +16,7 @@ Router::connect('/', array('Pages::view', 'args' => array('home')));
 Router::connect('/hello', array('HelloWorld::index'));
 
 #-- post crud
-Router::connect('/posts', array('Posts::show_post_list'));
+Router::connect('/posts', array('Posts::show_list'));
+Router::connect('/posts/new', array('Posts::add'));
 
 ?>

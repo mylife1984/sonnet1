@@ -22,3 +22,8 @@
         }?>
     </p>
 </div>
+
+<br/>
+<?php
+echo $this->html->link('新建',"posts/new");
+?>
