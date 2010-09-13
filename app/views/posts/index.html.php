@@ -10,23 +10,20 @@
 <!-- Pagination section -->
 <div id="pagination">
     <p class="next floated"><?php
-        if ($total <= $limit || $page == 1) {
+        if ($total_page > 1 && $page < $total_page) {
             //echo '<li>Next Entries &rarr;';
-        } else {
-            echo $this->html->link('Next Entries &rarr;', array(
+            echo $this->html->link('Next Page &rarr;', array(
                 'controller' => 'posts', 'action' => 'index',
-                 'page' => $page - 1, 'limit' => $limit
+                'page' => $page + 1, 'limit' => $limit
             ), array('escape' => false));
- 
         } ?>
     </p>
     <p class="prev"><?php
-        if ($total <= $limit || $page == ceil($total/$limit)) {
+        if ($total_page > 1 && $page > 1) {
             //echo '&larr; Previous Entries</li>';
-        } else {
-            echo $this->html->link('&larr; Previous Entries', array(
+        	echo $this->html->link('&larr;Previous Page', array(
                 'controller' => 'posts', 'action' => 'index',
-                'page' => $page + 1, 'limit' => $limit
+                 'page' => $page - 1, 'limit' => $limit
             ), array('escape' => false));
         }?>
     </p>

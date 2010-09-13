@@ -6,7 +6,7 @@ use app\models\Post;
 class PostsController extends \lithium\action\Controller {
     public function index() {
         $page = 1;
-        $limit = 5;
+        $limit = 2;
         $order = 'created desc';
  
         if (isset($this->request->params['page'])) {
@@ -19,12 +19,13 @@ class PostsController extends \lithium\action\Controller {
  
         $offset = ($page - 1) * $limit;
         $total = Post::find('count');
+        $total_page = floor(($total-1) / $limit)+1;
  
         $posts = Post::find('all', compact('conditions', 'limit', 'offset', 'order'))->to('array');
  
         $title = 'Home';
  
-        return compact('posts', 'limit', 'page', 'total', 'title');
+        return compact('posts', 'limit', 'page', 'total','total_page','title');
     }
 }
 ?>
