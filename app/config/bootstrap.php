@@ -19,7 +19,7 @@
  * directory as your application.  If you use the same libraries in multiple applications, you can
  * set this to a shared path on your server.
  */
-define('LITHIUM_LIBRARY_PATH', dirname(dirname(__DIR__)) . '/vendor/li3/libraries');
+define('LITHIUM_LIBRARY_PATH', dirname(dirname(__DIR__)) . '/vendor/li3/libraries'); //changed by fzx
 
 /**
  * This is the path to your application's directory.  It contains all the sub-folders for your
@@ -27,6 +27,8 @@ define('LITHIUM_LIBRARY_PATH', dirname(dirname(__DIR__)) . '/vendor/li3/librarie
  * stored outside of your app folder.
  */
 define('LITHIUM_APP_PATH', dirname(__DIR__));
+
+define('LITHIUM_ROOT_PATH', dirname(dirname(__DIR__))); //added by fzx
 
 /**
  * Locate and load Lithium core library files.  Throws a fatal error if the core can't be found.

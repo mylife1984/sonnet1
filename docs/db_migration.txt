@@ -1,0 +1,55 @@
+后台更新
+=======
+
+2010-09-13
+----------
+
+---- SQLITE3
+CREATE TABLE "posts" (
+"id"  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+"title"  varchar NOT NULL,
+"body"  text NOT NULL,
+"created"  datetime DEFAULT NULL,
+"modified"  datetime DEFAULT NULL
+)
+
+DELETE FROM `posts`;
+INSERT INTO `posts` (`id`, `title`, `body`, `created`, `modified`) VALUES
+(1, 'First Post', 'This is post number 1',datetime('now','localtime'), NULL);
+
+INSERT INTO `posts` (`id`, `title`, `body`, `created`, `modified`) VALUES
+(2, 'Second Post', 'This is post number two.\r\n\r\nSome content for this post', datetime('now','localtime'), NULL);
+
+INSERT INTO `posts` (`id`, `title`, `body`, `created`, `modified`) VALUES
+(3, 'Third post', 'This is my third post.', datetime('now','localtime'), NULL);
+
+INSERT INTO `posts` (`id`, `title`, `body`, `created`, `modified`) VALUES
+(4, 'Forth Post', 'This is the forth post.', datetime('now','localtime'), NULL);
+
+INSERT INTO `posts` (`id`, `title`, `body`, `created`, `modified`) VALUES
+(5, 'Fifth Post', 'This is post number 5.', datetime('now','localtime'), NULL);
+
+INSERT INTO `posts` (`id`, `title`, `body`, `created`, `modified`) VALUES
+(6, 'Sixth Post', 'My post number 6.', datetime('now','localtime'), NULL);
+
+---- MYSQL
+CREATE TABLE IF NOT EXISTS `posts` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`title` varchar(255) NOT NULL,
+`body` text NOT NULL,
+`created` datetime DEFAULT NULL,
+`modified` datetime DEFAULT NULL,
+PRIMARY KEY  (`id`)
+);
+
+DELETE FROM `posts`;
+INSERT INTO `posts` (`id`, `title`, `body`, `created`, `modified`) VALUES
+(1, 'First Post', 'This is post number 1', NOW(), NULL),
+(2, 'Second Post', 'This is post number two.\r\n\r\nSome content for this post', NOW(), NULL),
+(3, 'Third post', 'This is my third post.', NOW(), NULL),
+(4, 'Forth Post', 'This is the forth post.', NOW(), NULL),
+(5, 'Fifth Post', 'This is post number 5.', NOW(), NULL),
+(6, 'Sixth Post', 'My post number 6.', NOW(), NULL);
+
+  -- END --
+  

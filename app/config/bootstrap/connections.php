@@ -47,25 +47,27 @@ use lithium\data\Connections;
 // ));
 
 /**
- * Uncomment this configuration to use CouchDB as your default database.
+ * Uncomment this configuration to use MySQL as your default database.
  */
-// Connections::add('default', array(
-// 	'type' => 'http',
-// 	'adapter' => 'CouchDb',
-// 	'host' => 'localhost',
-// 	'database' => 'my_app'
-// ));
+ Connections::add('default', array(
+ 	'type' => 'database',
+ 	'adapter' => 'MySql',
+ 	'host' => 'localhost',
+ 	'login' => 'root',
+ 	'password' => '123456',
+ 	'database' => 'sonnet1'
+ ));
 
 /**
- * Uncomment this configuration to use MySQL as your default database.
+ * Uncomment this configuration to use SQLite3 as your default database.
  */
 // Connections::add('default', array(
 // 	'type' => 'database',
-// 	'adapter' => 'MySql',
+// 	'adapter' => 'Sqlite3',
 // 	'host' => 'localhost',
-// 	'login' => 'root',
+// 	'login' => '',
 // 	'password' => '',
-// 	'database' => 'my_app'
+// 	'database' => LITHIUM_ROOT_PATH . '/db.sqlite'
 // ));
 
 ?>

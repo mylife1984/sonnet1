@@ -34,8 +34,12 @@ Router::connect('/hello', array('controller' => 'HelloWorld', 'action' => 'index
 /**
  * Finally, connect the default routes.
  */
-#Router::connect('/{:controller}/{:action}/{:id:[0-9]+}.{:type}', array('id' => null));
-#Router::connect('/{:controller}/{:action}/{:id:[0-9]+}');
-#Router::connect('/{:controller}/{:action}/{:args}');
+Router::connect('/{:controller}/{:action}/{:id:[0-9]+}.{:type}', array('id' => null));
+//Router::connect('/{:controller}/{:action}/{:id:[0-9]+}');
+ 
+Router::connect('/{:controller}/{:action}/page:{:page:[0-9]+}');
+Router::connect('/{:controller}/{:action}/page:{:page}/limit:{:limit}');
+ 
+Router::connect('/{:controller}/{:action}/{:args}');
 
 ?>
