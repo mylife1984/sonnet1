@@ -18,5 +18,8 @@ Router::connect('/hello', array('HelloWorld::index'));
 #-- post crud
 Router::connect('/posts', array('Posts::show_list'));
 Router::connect('/posts/new', array('Posts::add'));
+Router::connect('/posts/edit/{:args}', array('Posts::edit'));
+Router::connect('/posts/delete/{:args}', array('Posts::delete'));
+Router::connect('/posts/{:args}', array('Posts::view'));
 
 ?>

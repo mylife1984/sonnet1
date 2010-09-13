@@ -2,7 +2,7 @@
  
 <article>
     <h1><?= $this->html->link($post['title'], 'posts/'.$post['id']); ?></h1>
-    <p><?=$this->html->link('修改', 'posts/'.$post['id'].'?_method=PUT'); ?></p>
+    <p><?=$this->html->link('修改', 'posts/edit/'.$post['id']); ?></p>
     <p><?=$post['body'] ?></p>
 </article>
 <?php endforeach; ?>
