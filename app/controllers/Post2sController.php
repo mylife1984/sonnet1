@@ -26,6 +26,9 @@ class Post2sController extends \lithium\action\Controller {
         if ($this->request->data) {
             $post = Post2::create($this->request->data);
             $success = $post->save();
+            if($success) {
+            	$this->redirect(array('Post2s::show_list'));
+            }	
         }
         
         $data = compact('success');

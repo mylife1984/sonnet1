@@ -1,5 +1,5 @@
-<?php if ($success): ?>
-    <p>Post Successfully Saved</p>
+<?php if(!$success): ?>
+    <p>Error In Saving Post!</p>
 <?php endif; ?>
     
 <?=$this->form->create(); ?>
