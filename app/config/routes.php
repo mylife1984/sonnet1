@@ -22,4 +22,8 @@ Router::connect('/posts/edit/{:args}', array('Posts::edit'));
 Router::connect('/posts/delete/{:args}', array('Posts::delete'));
 Router::connect('/posts/{:args}', array('Posts::view'));
 
+#-- post2 crud
+Router::connect('/post2s', array('Post2s::show_list'));
+Router::connect('/post2s/new', array('Post2s::add'));
+
 ?>
