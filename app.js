@@ -11,7 +11,15 @@ var express = require('express');
 //var app = module.parent.exports 
 //app.get('/user/', function(req, res){ ...
 //
-var app = module.exports = express.createServer();
+var app = module.exports = express.createServer(
+    // Place default Connect favicon above logger so it is not in
+    // the logging output
+    //express.favicon(),
+
+    // Custom logger format
+    express.logger({ format: '\x1b[1m:method\x1b[0m \x1b[33m:url\x1b[0m :response-time' })
+
+);
 
 require('./apps/demo/route')
 

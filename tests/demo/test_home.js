@@ -6,6 +6,7 @@
  */
 
 var app = require('../../app');
+var sys = require('sys');
 
 module.exports = {
 	//
@@ -23,7 +24,8 @@ module.exports = {
 			}
 		}
 		assert.response(app, req, res, function(res) {
-					assert.includes(res.body, '<title>My Express</title>');
-				});
+			//console.log(sys.inspect(res));
+			assert.includes(res.body, '<title>My Express</title>');
+		});
 	}
 };
