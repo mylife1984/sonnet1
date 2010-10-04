@@ -1,0 +1,13 @@
+常用API
+=======
+
+控制台输出
+console.log()
+console.log(sys.inspect(res))
+
+反射
+var sys = require('sys');
+sys.inspect(res)
+
+
+
