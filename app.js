@@ -17,7 +17,7 @@ var app = module.exports = express.createServer(
     //express.favicon(),
 
     // Custom logger format
-    express.logger({ format: '\x1b[1m:method\x1b[0m \x1b[33m:url\x1b[0m :response-time' })
+    express.logger({ format: '\x1b[1m:method\x1b[0m \x1b[33m:url\x1b[0m :status' })
 
 );
 
@@ -31,6 +31,8 @@ app.configure(function(){
     app.use(express.methodOverride());
     app.use(express.compiler({ src: __dirname + '/public', enable: ['less'] }));
     app.use(app.router);
+    app.use(express.cache());
+    //app.use(express.gzip());   
     app.use(express.staticProvider(__dirname + '/public'));
 });
 
