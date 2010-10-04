@@ -37,6 +37,7 @@ app.configure(function(){
 });
 
 app.configure('development', function(){
+	console.log("in development");
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
 });
 
