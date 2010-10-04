@@ -31,17 +31,20 @@ app.configure(function(){
     app.use(express.methodOverride());
     app.use(express.compiler({ src: __dirname + '/public', enable: ['less'] }));
     app.use(app.router);
+    app.use(express.conditionalGet()); //必须与cache一起用
     app.use(express.cache());
-    //app.use(express.gzip());   
+    app.use(express.gzip());   
     app.use(express.staticProvider(__dirname + '/public'));
 });
 
 app.configure('development', function(){
-	console.log("in development");
+	//console.log("in development");
+	DEBUG = true;
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
 });
 
 app.configure('production', function(){
+   DEBUG = false;
    app.use(express.errorHandler()); 
 });
 
