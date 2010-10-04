@@ -5,6 +5,12 @@
 
 var express = require('express');
 
+//This makes it accessible to your child module through module.*parent*.exports.
+//
+//例如：
+//var app = module.parent.exports 
+//app.get('/user/', function(req, res){ ...
+//
 var app = module.exports = express.createServer();
 
 // Configuration
