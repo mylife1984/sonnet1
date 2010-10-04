@@ -7,5 +7,4 @@ var service = require('./home');
 
 app.get('/', service.get);
 
-
 //EOP
