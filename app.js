@@ -13,6 +13,8 @@ var express = require('express');
 //
 var app = module.exports = express.createServer();
 
+require('./apps/demo/route')
+
 // Configuration
 
 app.configure(function(){
@@ -33,14 +35,6 @@ app.configure('production', function(){
 });
 
 // Routes
-
-app.get('/', function(req, res){
-    res.render('index.jade', {
-        locals: {
-            title: 'Express'
-        }
-    });
-});
 
 // Only listen on $ node app.js
 
