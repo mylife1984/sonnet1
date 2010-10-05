@@ -4,6 +4,7 @@
  */
 
 var express = require('express');
+var sys = require('sys')
 
 //This makes it accessible to your child module through module.*parent*.exports.
 //
@@ -11,17 +12,13 @@ var express = require('express');
 //var app = module.parent.exports 
 //app.get('/user/', function(req, res){ ...
 //
-var app = module.exports = express.createServer(
-    // Place default Connect favicon above logger so it is not in
-    // the logging output
-    //express.favicon(),
+console.log(sys.inspect(module))
+var app = module.exports = express.createServer()
 
-    // Custom logger format
-    //express.logger({ format: '\x1b[1m:method\x1b[0m \x1b[33m:url\x1b[0m :status' })
-
-);
+//调用其他
 
 require('./apps/demo/route')
+
 
 // Configuration
 app.configure('development', function(){
