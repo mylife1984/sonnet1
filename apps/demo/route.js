@@ -1,10 +1,10 @@
 /**
  * home
  */
-var app = module.parent.exports
+var server = module.parent.exports
 
 var service = require('./home'); 
 
-app.get('/', service.get);
+server.get('/', service.get);
 
 //EOP

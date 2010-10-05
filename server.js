@@ -12,42 +12,38 @@ var sys = require('sys')
 //var app = module.parent.exports 
 //app.get('/user/', function(req, res){ ...
 //
-console.log(sys.inspect(module))
-var app = module.exports = express.createServer()
+var server = module.exports = express.createServer()
 
-//调用其他
-
+//调用其他分系统
 require('./apps/demo/route')
 
-
-// Configuration
-app.configure('development', function(){
-    app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+//配置
+server.configure('development', function(){
+    server.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
 });
 
-app.configure('production', function(){
-   app.use(express.errorHandler()); 
+server.configure('production', function(){
+   server.use(express.errorHandler()); 
 });
 
-app.configure(function(){
-    app.set('views', __dirname + '/views');
-    app.use(express.logger({ format: ':method :url :status' }));
-    app.use(express.bodyDecoder());
-    app.use(express.methodOverride());
-    app.use(express.cookieDecoder());        
-    app.use(app.router);
-    app.use(express.conditionalGet()); //必须与cache一起用
-    app.use(express.cache());
-    app.use(express.gzip());   
-    app.use(express.staticProvider(__dirname + '/public'));
+server.configure(function(){
+    server.set('views', __dirname + '/views');
+    server.use(express.logger({ format: ':method :url :status' }));
+    server.use(express.bodyDecoder());
+    server.use(express.methodOverride());
+    server.use(express.cookieDecoder());        
+    server.use(server.router);
+    server.use(express.conditionalGet()); //必须与cache一起用
+    server.use(express.cache());
+    server.use(express.gzip());   
+    server.use(express.staticProvider(__dirname + '/public'));
 });
 
 
 // Routes
 
-// Only listen on $ node app.js
-
+// Only listen on $ node server.js
 if (!module.parent) {
-    app.listen(3000);
-    console.log("Express server listening on port %d", app.address().port)
+    server.listen(3000);
+    console.log("Express server listening on port %d", server.address().port)
 }

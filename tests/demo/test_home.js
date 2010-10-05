@@ -5,7 +5,7 @@
  * Module dependencies.
  */
 
-var app = require('../../app');
+var server = require('../../server');
 var sys = require('sys');
 
 module.exports = {
@@ -23,7 +23,7 @@ module.exports = {
 				'Content-Type' : 'text/html; charset=utf-8'
 			}
 		}
-		assert.response(app, req, res, function(res) {
+		assert.response(server, req, res, function(res) {
 			//console.log(sys.inspect(res));
 			assert.includes(res.body, '<title>My Express</title>');
 		});
