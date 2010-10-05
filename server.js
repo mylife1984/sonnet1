@@ -17,7 +17,7 @@ var express = require('express'),
 var server = module.exports = express.createServer()
 
 //in case of crash. I've never seen this used, got it from somebody else's code.
-process.title = 'opowerjobs';
+process.title = 'sonnet1';
 process.addListener('uncaughtException', function (err, stack) {
     console.log(err);
     console.log(stack);
@@ -81,7 +81,6 @@ server.error(function(err, req, res, next){
 
 //Routes
 server.get('/log', function(req, res) {
-	//console.log(sys.inspect(log.history()))
     res.render('log.ejs',  { locals: { history: log.history() } });
 });
 
