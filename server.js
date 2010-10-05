@@ -81,32 +81,8 @@ server.error(function(err, req, res, next){
 
 //Routes
 server.get('/log', function(req, res) {
+	//console.log(sys.inspect(log.history()))
     res.render('log.ejs',  { locals: { history: log.history() } });
-});
-
-// Required for 404's to return something
-server.get('/*', function(req, res){
-    var host = req.headers.host.split(':')[0],
-        new_url,
-        extension = req.url.match(/\....$/);
-
-    if (extension) {
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('Cannot ' + req.method + ' ' + req.url);
-    }
-    else {
-        if (!req.session.tempHost || host == 'localhost') {
-            if (req.headers['user-agent'] && req.headers['user-agent'].match(/msnbot|slurp/i) === null) {
-                log('404', req.url, req.headers.referrer || req.headers.referer || req.session.jobboard || '');
-            }
-        }
-
-        var array = req.url.replace(/\/\//g, '/').split('/');
-        if (array.pop() == '') { array.pop(); }
-
-        new_url = array.join('/') || '/';
-        res.redirect(new_url);
-    }
 });
 
 //Only listen on $ node server.js
