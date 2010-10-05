@@ -5,6 +5,7 @@
 
 var express = require('express'),
 	sys = require('sys'),
+	fs = require('fs'),
 	log = require('./lib/util/log').from(__filename),
 	objToHTML = require('./lib/util/prettyJSON');
 
@@ -35,7 +36,7 @@ require('./apps/demo/route')
 //配置
 server.configure('development', function(){
     log('running in development mode');
-    server.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+    //server.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
 });
 
 server.configure('production', function(){
@@ -62,11 +63,12 @@ server.configure(function(){
 
 //Error
 server.error(function(err, req, res, next){
+	    var url = 'http://' + req.headers.host + req.url;
         if (err.message != 'EISDIR, Is a directory') {
             log('*************************************');
             log('****************ERROR****************');
             log('*************************************');
-            log('http://' + req.headers.host + req.url);
+            log(url);
             err.message && log(err.message);
             err.arguments && log(err.arguments);
             err.stack && log(err.stack);
@@ -75,13 +77,12 @@ server.error(function(err, req, res, next){
         if (server.get('env') == 'production') {
             res.redirect('/');
         } else {
-            res.render('error.ejs', { locals: { title: 'Error', message: err.message, object: false } });
+            res.render('error.ejs', { locals: { 
+            	title: 'Error:'+url, 
+            	message: err.message, 
+            	object: err.stack }
+            });
         }
-});
-
-//Routes
-server.get('/log', function(req, res) {
-    res.render('log.ejs',  { locals: { history: log.history() } });
 });
 
 //Only listen on $ node server.js

@@ -5,6 +5,6 @@ var server = module.parent.exports
 
 var service = require('./home'); 
 
-server.get('/', service.get);
+server.get('/', service.get2);
 
 //EOP
