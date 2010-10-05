@@ -25,7 +25,7 @@ module.exports = {
 		}
 		assert.response(server, req, res, function(res) {
 			//console.log(sys.inspect(res));
-			assert.includes(res.body, '<title>My Express</title>');
+			assert.includes(res.body, 'My Express');
 		});
 	}
 };

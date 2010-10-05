@@ -1,0 +1,48 @@
+<div class="content">
+<div class="span-17">
+    <table class="log">
+    <% for(var i = 0, total = Math.min(history.length, 400), start = history.length - total; i < total; i++) { var item = history[i + start]; %>
+    <tr>
+        <td class="time"><%= log.ago(item.date) %></td>
+        <td><span class="file"><%= item.file %></span></td>
+        <td>
+        <%
+        for ( var i in item.messages ) {
+    		var msg = item.messages[i]
+                switch (typeof msg) {
+                    case 'string':
+                        if (msg.indexOf('http://') === 0 || msg.indexOf('/') === 0) {
+                %>
+                        <a href="<%- msg %>"><%= msg %></a>
+                <%
+                        }
+                        else {
+                %>
+                        <span class="string"><%- msg.replace(/\n/g, '<br/>') %></span>
+                <%
+                        }
+                        break;
+                    case 'number':
+                %>
+                        <span class="number"><%= msg %></span>
+                <%
+                        break;
+                    case 'function':
+                %>
+                        <span class="function">[Function]</span>
+                <%
+                        break;
+                default:
+                    %>
+                    <%- debug(msg) %>
+                    <%
+                    break;
+                }
+            };
+        %>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</div>
+</div>

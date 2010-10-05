@@ -1,0 +1,44 @@
+[0;36m4:35:59[0m [0;32mlog[0m [0;37mready[0m
+[0;36m4:35:59[0m [0;32mserver[0m [0;37mrunning in development mode[0m
+[0;36m4:35:59[0m [0;32mserver[0m [0;37m*************************************[0m
+[0;36m4:35:59[0m [0;32mserver[0m [0;37m****************ERROR****************[0m
+[0;36m4:35:59[0m [0;32mserver[0m [0;37m*************************************[0m
+[0;36m4:35:59[0m [0;32mserver[0m [0;37mhttp://undefined/[0m
+[0;36m4:35:59[0m [0;32mserver[0m [0;37massets is not defined[0m
+[0;36m4:35:59[0m [0;32mserver[0m [1;36m[ [32m'assets'[39m ][0m
+[0;36m4:35:59[0m [0;32mserver[0m [0;37mReferenceError: assets is not defined
+    at ServerResponse.anonymous (eval at <anonymous> (/usr/local/lib/node/.npm/ejs/0.2.0/package/lib/ejs.js:124:18))
+    at ServerResponse.<anonymous> (/usr/local/lib/node/.npm/ejs/0.2.0/package/lib/ejs.js:125:19)
+    at Object.render (/usr/local/lib/node/.npm/ejs/0.2.0/package/lib/ejs.js:160:15)
+    at ServerResponse.render (/usr/local/lib/node/.npm/express/1.0.0rc3/package/lib/express/view.js:284:26)
+    at ServerResponse.render (/usr/local/lib/node/.npm/express/1.0.0rc3/package/lib/express/view.js:294:14)
+    at Object.<anonymous> (/cygdrive/d/dev_ssjs/sonnet1/apps/demo/home.js:5:9)
+    at pass (/usr/local/lib/node/.npm/connect/0.2.5/package/lib/connect/middleware/router.js:70:27)
+    at Object.router [as handle] (/usr/local/lib/node/.npm/connect/0.2.5/package/lib/connect/middleware/router.js:85:10)
+    at next (/usr/local/lib/node/.npm/connect/0.2.5/package/lib/connect/index.js:244:23)
+    at Object.handle (/usr/local/lib/node/.npm/express/1.0.0rc3/package/lib/express/server.js:58:9)[0m
+[0;36m4:35:59[0m [0;32mserver[0m [0;37m*************************************[0m
+{ name: 'AssertionError'
+, message: 'can_show_home. Invalid response status code.\n    Expected: \u001b[32m200\u001b[0m\n    Got: \u001b[31m500\u001b[0m'
+, actual: 500
+, expected: 200
+, operator: '=='
+, stack: [Getter/Setter]
+}
+undefined
+[0;36m4:35:59[0m [0;32mserver[0m [0;37m*************************************[0m
+[0;36m4:35:59[0m [0;32mserver[0m [0;37m************EXCEPTION****************[0m
+[0;36m4:35:59[0m [0;32mserver[0m [0;37m*************************************[0m
+[0;36m4:35:59[0m [0;32mserver[0m [0;37mcan_show_home. Invalid response status code.
+    Expected: [32m200[0m
+    Got: [31m500[0m[0m
+[0;36m4:35:59[0m [0;32mserver[0m [0;37mAssertionError: can_show_home. Invalid response status code.
+    Expected: [32m200[0m
+    Got: [31m500[0m
+    at IncomingMessage.<anonymous> (/usr/local/bin/expresso:407:24)
+    at IncomingMessage.emit (events:41:20)
+    at HTTPParser.onMessageComplete (http:107:23)
+    at Client.ondata (http:884:22)
+    at IOWatcher.callback (net:494:29)
+    at node.js:757:9[0m
+[0;36m4:35:59[0m [0;32mserver[0m [0;37m*************************************[0m
