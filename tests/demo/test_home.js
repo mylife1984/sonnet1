@@ -1,10 +1,3 @@
-
-// Run $ expresso
-
-/**
- * Module dependencies.
- */
-
 var server = require('../../server');
 var sys = require('sys');
 
@@ -29,3 +22,4 @@ module.exports = {
 		});
 	}
 };
+//EOP
