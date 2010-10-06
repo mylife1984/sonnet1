@@ -49,6 +49,9 @@ server.configure(function(){
     server.helpers({
         debug: objToHTML
     }) //提供给view使用
+    // Setup ejs views as default, with .html as the extension
+    server.register('.html', require('ejs'));
+    server.set('view engine', 'html');
     
     server.use(express.logger({ format: ':method :url :status' }));
     server.use(express.bodyDecoder());
@@ -77,7 +80,7 @@ server.error(function(err, req, res, next){
         if (server.get('env') == 'production') {
             res.redirect('/');
         } else {
-            res.render('error.ejs', { locals: { 
+            res.render('error.html', { locals: { 
             	title: 'Error:'+url, 
             	message: err.message, 
             	object: err.stack }
