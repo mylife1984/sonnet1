@@ -3,6 +3,8 @@
 
 控制台输出
 console.log()
+
+var sys = require('sys');
 console.log(sys.inspect(res))
 
 反射

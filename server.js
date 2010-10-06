@@ -6,7 +6,7 @@
 var express = require('express'),
 	sys = require('sys'),
 	fs = require('fs'),
-	log = require('./lib/util/log'),
+	log = require('./lib/util/log').from(__dirname),
 	objToHTML = require('./lib/util/prettyJSON');
 
 //This makes it accessible to your child module through module.*parent*.exports.
@@ -17,7 +17,7 @@ var express = require('express'),
 //
 var server = module.exports = express.createServer()
 
-log.init(__dirname)
+//log.init(__dirname)
 
 //in case of crash. I've never seen this used, got it from somebody else's code.
 process.title = 'sonnet1';
