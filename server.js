@@ -22,7 +22,7 @@ var server = module.exports = express.createServer()
 //in case of crash. I've never seen this used, got it from somebody else's code.
 process.title = 'sonnet1';
 process.addListener('uncaughtException', function (err, stack) {
-    //console.log(err);
+    console.log("EXCEPTION: please see log.txt");
     //console.log(stack);
     log('*************************************');
     log('************EXCEPTION****************');
@@ -31,9 +31,6 @@ process.addListener('uncaughtException', function (err, stack) {
     err.stack && log(err.stack);
     log('*************************************');
 });
-
-//调用其他分系统
-require('./apps/demo/route')
 
 //配置
 server.configure('development', function(){
@@ -88,8 +85,11 @@ server.error(function(err, req, res, next){
         }
 });
 
-//全局设置
-ROOT_PATH = __dirname
+//常量设置
+exports.ROOT_PATH = __dirname
+
+//调用其他分系统
+require('./apps/demo/route')
 
 //Only listen on $ node server.js
 if (!module.parent) {
