@@ -46,9 +46,18 @@ server.configure('production', function(){
 server.configure(function(){
 	
     server.set('views', __dirname + '/views');
+    
+    //提供给view使用
+    server.dynamicHelpers({
+    	//<%= request.url %>
+        request: function(req){
+            return req;
+        }
+    })    
     server.helpers({
         debug: objToHTML
-    }) //提供给view使用
+    }) 
+    
     // Setup ejs views as default, with .html as the extension
     server.register('.html', require('ejs'));
     server.set('view engine', 'html');
@@ -80,12 +89,16 @@ server.error(function(err, req, res, next){
         if (server.get('env') == 'production') {
             res.redirect('/');
         } else {
-            res.render('error.html', { locals: { 
+            res.render('500.html', { locals: { 
             	title: 'Error:'+url, 
             	message: err.message, 
             	object: err.stack }
             });
         }
+});
+// Example 404 page via simple Connect middleware
+server.use(function(req, res){
+    res.render('404.html');
 });
 
 //常量设置
