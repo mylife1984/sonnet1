@@ -12,15 +12,15 @@ This project is just for learning expressjs web framework.
 
 	$ cd sonnet1
 	
-    $ node server.js
+	$ node server.js
     
-   you can see the home page from http://localhost:3000. 
+   You can see the home page from http://localhost:3000. 
 	 
 # Running all tests
 
 	$ cd sonnet1/tests/demo
 	
-    $ expresso *
+	$ expresso *
 	 
  -END-
  	 
