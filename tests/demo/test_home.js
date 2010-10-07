@@ -1,3 +1,6 @@
+/**
+ * demo/home.js 单元测试
+ */
 var server = require('../../server');
 var sys = require('sys');
 
