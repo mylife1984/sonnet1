@@ -6,7 +6,7 @@
 var express = require('express'),
 	sys = require('sys'),
 	fs = require('fs'),
-	log = require('./lib/util/log').from(__dirname),
+	log = require('./lib/util/log'),
 	objToHTML = require('./lib/util/prettyJSON');
 
 //This makes it accessible to your child module through module.*parent*.exports.
@@ -101,11 +101,12 @@ server.use(function(req, res){
     res.render('404.html');
 });
 
-//常量设置
-exports.ROOT_PATH = __dirname
-
-//调用其他分系统
-require('./apps/demo/route')
+//加载app
+fs.readdirSync(__dirname + '/apps').forEach(function(filename){
+    if (!/\.js$/.test(filename)) {
+        require('./apps/' + filename+"/route");
+    }
+});
 
 //Only listen on $ node server.js
 if (!module.parent) {
