@@ -1,5 +1,5 @@
 /*
- * 单元测试: util/conductor.js
+ * 单元测试: util/flow.js
  */
 var flow = require('./../../../lib/util/flow')
     keystore = require('./lib/keystore');
