@@ -11,5 +11,9 @@ console.log(sys.inspect(res))
 var sys = require('sys');
 sys.inspect(res)
 
+日志：
+var	log = require('util/log')
+log("")
+
 
 

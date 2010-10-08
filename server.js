@@ -2,12 +2,14 @@
 /**
  * Module dependencies.
  */
+require.paths.unshift(__dirname);
+require.paths.unshift(__dirname+"/lib");
 
 var express = require('express'),
 	sys = require('sys'),
 	fs = require('fs'),
-	log = require('./lib/util/log'),
-	objToHTML = require('./lib/util/prettyJSON');
+	log = require('util/log'),
+	objToHTML = require('util/prettyJSON');
 
 //This makes it accessible to your child module through module.*parent*.exports.
 //
@@ -104,7 +106,7 @@ server.use(function(req, res){
 //加载app
 fs.readdirSync(__dirname + '/apps').forEach(function(filename){
     if (!/\.js$/.test(filename)) {
-        require('./apps/' + filename+"/route");
+        require('apps/' + filename+"/route");
     }
 });
 

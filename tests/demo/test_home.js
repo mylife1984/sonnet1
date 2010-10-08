@@ -1,8 +1,8 @@
 /**
- * demo/home.js 单元测试
+ * 单元测试: demo/home.js
  */
-var server = require('../../server');
-var sys = require('sys');
+var server = require('../../server'),
+	sys = require('sys');
 
 module.exports = {
 	//
@@ -61,4 +61,5 @@ module.exports = {
 		});
 	}
 };
+
 //EOP
