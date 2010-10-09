@@ -1,7 +1,7 @@
 /*
  * 单元测试: util/flow.js
  */
-var flow = require('./../../../lib/util/flow')
+var flow = require('./../../lib/util/flow')
     keystore = require('./lib/keystore');
     
 module.exports = {

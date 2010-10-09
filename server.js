@@ -1,6 +1,5 @@
-
 /**
- * Module dependencies.
+ * 项目入口
  */
 require.paths.unshift(__dirname);
 require.paths.unshift(__dirname+"/lib");
@@ -11,15 +10,13 @@ var express = require('express'),
 	log = require('util/log'),
 	objToHTML = require('util/prettyJSON');
 
-//This makes it accessible to your child module through module.*parent*.exports.
+//This makes it accessible to your child module through module.parent.exports.
 //
 //例如：
 //var app = module.parent.exports 
 //app.get('/user/', function(req, res){ ...
 //
 var server = module.exports = express.createServer()
-
-//log.init(__dirname)
 
 //in case of crash. I've never seen this used, got it from somebody else's code.
 process.title = 'sonnet1';

@@ -5,8 +5,7 @@
 node server.js
 
 单元测试
-cd tests/demo
-expresso *
+expresso tests/**/*
 
     -- END --
 
