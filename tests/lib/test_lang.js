@@ -177,8 +177,49 @@ module.exports = {
 		var obj1 = new Class2();   
 		Class2.prototype = new Class1(); //创建了一个新的对象   
 		var obj2 = new Class2();   
-		asserk.ok(!(obj1 instanceof Class2)); //为何是false？原因与上面相同。   
-		asserk.ok(obj2 instanceof Class2);     		
+		assert.ok(!(obj1 instanceof Class2)); //为何是false？原因与上面相同。   
+		assert.ok(obj2 instanceof Class2);     		
+	}
+	//
+	//expresso * -o 'can_functional_programming'
+	//
+	//Thanks: http://www.jzxue.com/wangzhankaifa/javascript-ajax/201006/28-3996.html
+	,'can_functional_programming' : function(assert) {
+		//1.匿名函数
+		function map(array, func){ 
+		 	 var res = []; 
+		  	 for ( var i = 0, len = array.length; i < len; i++){ 
+		 		res.push(func(array[i])); 
+		  	 } 
+		 	 return res; 
+		} 
+		var mapped = map([1, 3, 5, 7, 8],  function (n){
+			  return n = n + 1; 
+		});  
+		assert.equal(mapped.join(","),"2,4,6,8,9","对数组中每一个元素加 1")
+		
+		//2.柯里化(currying)
+		//柯里化是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，
+		//并且返回接受余下的参数而且返回结果的新函数的技术。
+		function adder(num){ 
+			  return function (x){ 
+		  			return num + x; 
+			  } 
+		} 
+		var add5 = adder(5); 
+		var add6 = adder(6);
+		assert.equal(add5(1),6)
+		assert.equal(add6(1),7)
+		
+		//下面的抛物线的例子，更能说明柯里化如何使函数定义方式同数学语言描述方式的一致性
+		//如果不用柯里化编程方式，也可实现同样的功能，但显然无法达到同样的效果！
+		function parabola(a,b,c) {
+			return function(x) {
+				return a*x*x+b*x+c
+			}
+		}
+  		var p1 = parabola(2,3,4)
+  		assert.equal(p1(15),499,"已知抛物线公式，代入变量x，得到结果")
 	}
 }
 //EOP

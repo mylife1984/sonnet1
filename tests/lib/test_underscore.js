@@ -137,6 +137,7 @@ module.exports = {
 	//expresso * -o 'can_collections_each'
 	//
 	,'can_collections_each' : function(assert) {
+		//数组
 	    _([1, 2, 3]).each(function(num, i) {
     	  assert.equal(num, i + 1, 'each iterators provide value and iteration count');
     	});
@@ -153,21 +154,33 @@ module.exports = {
 	    }, {multiplier : 5});
 	    assert.equal(answers.join(', '), '5, 10, 15', 'context object property accessed');
     	
-		answers = [];
+		var answers = [];
 		_([1, 2, 3]).forEach(function(num) { 
 			answers.push(num); 
 		});
 		assert.equal(answers.join(', '), '1, 2, 3', 'aliased as "forEach"');
 
-		answers = [];
+	    var answer = null;
+    	_([1, 2, 3]).each(function(num, index, arr) { 
+    		if (_(arr).include(num)) answer = true; 
+    	});
+    	assert.ok(answer, 'can reference the original collection from inside the iterator');
+		
+    	//对象
+		var answers = [];
 		var obj = {one : 1, two : 2, three : 3};
-		obj.constructor.prototype.four = 4;
+		obj.constructor.prototype.four = 4; //等于 Object.prototype.four = 4;
 		_(obj).each(function(value, key) { 
 			answers.push(key); 
-		});
+		}); //看不到 four 属性！
 		assert.equal(answers.join(", "), 'one, two, three', 'iterating over objects works, and ignores the object prototype.');
 		delete obj.constructor.prototype.four;
 		
+	    var answers = [];
+	    _({range : 1, speed : 2, length : 3}).each(function(value,key){ 
+	    	answers.push(value); 
+	    });
+	    assert.ok(answers.join(', '), '1, 2, 3', 'can iterate over objects with numeric length properties');
 	}
 };
 

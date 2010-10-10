@@ -4,7 +4,7 @@
 启动
 node server.js
 
-单元测试
+运行全部单元测试
 expresso tests/**/*
 
     -- END --
