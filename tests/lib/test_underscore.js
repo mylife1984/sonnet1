@@ -133,6 +133,42 @@ module.exports = {
 	    assert.equal(_(12).range(7,-2).join(' '), '12 10 8', 'range with three arguments a &amp; b &amp; c, a &gt; b, c &lt; 0 generates an array of elements a,a-c,a-2c and ends with the number not less than b');
 	    assert.equal(_(0).range(-10,-1).join(' '), '0 -1 -2 -3 -4 -5 -6 -7 -8 -9', 'final example in the Python docs');
 	}
+	//
+	//expresso * -o 'can_collections_each'
+	//
+	,'can_collections_each' : function(assert) {
+	    _([1, 2, 3]).each(function(num, i) {
+    	  assert.equal(num, i + 1, 'each iterators provide value and iteration count');
+    	});
+    	
+	    var answer = null;
+    	_([1, 2, 3]).each(function(num) { 
+    		if ((answer = num) == 2) _().breakLoop(); 
+    	});
+    	assert.equal(answer, 2, 'the loop broke in the middle');
+    	
+	    var answers = [];
+	    _([1, 2, 3]).each(function(num) { 
+	    	answers.push(num * this.multiplier);
+	    }, {multiplier : 5});
+	    assert.equal(answers.join(', '), '5, 10, 15', 'context object property accessed');
+    	
+		answers = [];
+		_([1, 2, 3]).forEach(function(num) { 
+			answers.push(num); 
+		});
+		assert.equal(answers.join(', '), '1, 2, 3', 'aliased as "forEach"');
+
+		answers = [];
+		var obj = {one : 1, two : 2, three : 3};
+		obj.constructor.prototype.four = 4;
+		_(obj).each(function(value, key) { 
+			answers.push(key); 
+		});
+		assert.equal(answers.join(", "), 'one, two, three', 'iterating over objects works, and ignores the object prototype.');
+		delete obj.constructor.prototype.four;
+		
+	}
 };
 
 //EOP
