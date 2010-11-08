@@ -221,5 +221,32 @@ module.exports = {
   		var p1 = parabola(2,3,4)
   		assert.equal(p1(15),499,"已知抛物线公式，代入变量x，得到结果")
 	}
+	//
+	//expresso * -o 'can_use_arguments'
+	//
+	,'can_use_arguments' : function(assert) {
+		function format(string) {
+			var args = arguments; //为了让replace的闭包中访问arguments，所以要先保存到一个局部变量中 			
+			//arguments是一个对象, 例如：
+			//{ '0': 'And the %1 want to know whose %2 you %3'
+			//, '1': 'papers'
+			//, '2': 'shirt'
+			//, '3': 'wear'
+			//}
+			//
+			var pattern = new RegExp("%([1-" + arguments.length + "])", "g");
+			return string.replace(pattern, function(match, index) {
+		    	return args[index]; //属性名为数字，所以能获得正确的值
+		  	});
+		};
+		var str = format("And the %1 want to know whose %2 you %3", "papers", "shirt", "wear");
+		assert.equal(str,"And the papers want to know whose shirt you wear")
+	}
+	//
+	//expresso * -o 'can_use_array'
+	//
+	,'can_use_array' : function(assert) {
+		
+	}
 }
 //EOP

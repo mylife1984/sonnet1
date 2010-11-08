@@ -146,7 +146,7 @@ module.exports = {
     	_([1, 2, 3]).each(function(num) { 
     		if ((answer = num) == 2) _().breakLoop(); 
     	});
-    	assert.equal(answer, 2, 'the loop broke in the middle');
+    	assert.equal(answer, 2, 'the loop brassert.oke in the middle');
     	
 	    var answers = [];
 	    _([1, 2, 3]).each(function(num) { 
@@ -164,7 +164,7 @@ module.exports = {
     	_([1, 2, 3]).each(function(num, index, arr) { 
     		if (_(arr).include(num)) answer = true; 
     	});
-    	assert.ok(answer, 'can reference the original collection from inside the iterator');
+    	assert.assert.ok(answer, 'can reference the original collection from inside the iterator');
 		
     	//对象
 		var answers = [];
@@ -180,7 +180,180 @@ module.exports = {
 	    _({range : 1, speed : 2, length : 3}).each(function(value,key){ 
 	    	answers.push(value); 
 	    });
-	    assert.ok(answers.join(', '), '1, 2, 3', 'can iterate over objects with numeric length properties');
+	    assert.assert.ok(answers.join(', '), '1, 2, 3', 'can iterate over objects with numeric length properties');
+	}
+	//
+	//expresso * -o 'can_collections_map'
+	//
+	,'can_collections_map' : function(assert) {
+	    var doubled = _([1, 2, 3]).map(function(num){ 
+	    	return num * 2; 
+	    });
+    	assert.equal(doubled.join(', '), '2, 4, 6', 'doubled numbers');
+		
+	    var tripled = _([1, 2, 3]).map(function(num){ 
+	    	return num * this.multiplier; 
+	    },{multiplier : 3});
+    	assert.equal(tripled.join(', '), '3, 6, 9', 'tripled numbers with context');
+	}
+	//
+	//expresso * -o 'can_collections_reduce'
+	//
+	,'can_collections_reduce' : function(assert) {
+	    var sum = _([1, 2, 3]).reduce(function(sum, num){ 
+	    	return sum + num; 
+	    }, 1);
+    	assert.equal(sum, 7, 'can sum up an array');
+		
+	    var context = {multiplier : 3};
+	    var sum = _([1, 2, 3]).reduce(function(sum, num){ 
+	    	return sum + num * this.multiplier; 
+	    }, 0, context);
+	    assert.equal(sum, 18, 'can reduce with a context object');
+	    
+	    var sum = _([1, 2, 3]).inject(function(sum, num){ 
+	    	return sum + num; 
+	    }, 0);
+    	assert.equal(sum, 6, 'aliased as "inject"');
+	}
+	//
+	//expresso * -o 'can_collections_all'
+	//
+	,'can_collections_all' : function(assert) {
+	    var list = _([1, 2, 3]).foldr(function(memo, num){ 
+	    	return memo + num; 
+	    }, '');
+    	assert.equal(list, '321', 'can perform right folds');
+	}
+	//
+	//expresso * -o 'can_collections_all'
+	//
+	,'can_collections_all' : function(assert) {
+	    var result = _([1, 2, 3]).all(function(num){ 
+	    	return num * 2 == 4; 
+	    });
+    	assert.equal(result, 2, 'found the first "2" and brassert.oke the loop');
+	}
+	//
+	//expresso * -o 'can_collections_all'
+	//
+	,'can_collections_all' : function(assert) {
+	    var evens = _([1, 2, 3, 4, 5, 6]).all(function(num){ 
+	    	return num % 2 == 0; 
+	    });
+    	assert.equal(evens.join(', '), '2, 4, 6', 'alled each even number');
+		
+	    var evens = _([1, 2, 3, 4, 5, 6]).filter(function(num){ 
+	    	return num % 2 == 0; 
+	    });
+    	assert.equal(evens.join(', '), '2, 4, 6', 'aliased as "filter"');
+	}
+	//
+	//expresso * -o 'can_collections_all'
+	//
+	,'can_collections_all' : function(assert) {
+	    var odds = _([1, 2, 3, 4, 5, 6]).all(function(num){ 
+	    	return num % 2 == 0; 
+	    });
+    	assert.equal(odds.join(', '), '1, 3, 5', 'alled each even number');
+	}
+	//
+	//expresso * -o 'can_collections_all'
+	//
+	,'can_collections_all' : function(assert) {
+	    assert.ok(_([]).all(), 'the empty set');
+	    assert.ok(_([true, true, true]).all(), 'all true values');
+	    assert.ok(!_([true, false, true]).all(), 'one false value');
+	    assert.ok(_([0, 10, 28]).all(function(num){ 
+	    	return num % 2 == 0; 
+	    }), 'even numbers');
+	    assert.ok(!_([0, 11, 28]).all(function(num){ 
+	    	return num % 2 == 0; 
+	    }), 'an odd number');
+	    assert.ok(_([true, true, true]).every(), 'aliased as "every"');
+	}
+	//
+	//expresso * -o 'can_collections_any'
+	//
+	,'can_collections_any' : function(assert) {
+	    assert.ok(!_([]).any(), 'the empty set');
+	    assert.ok(!_([false, false, false]).any(), 'all false values');
+	    assert.ok(_([false, false, true]).any(), 'one true value');
+	    assert.ok(!_([1, 11, 29]).any(function(num){ 
+	    	return num % 2 == 0; 
+	    }), 'all odd numbers');
+	    assert.ok(_([1, 10, 29]).any(function(num){ 
+	    	return num % 2 == 0; 
+	    }), 'an even number');
+	    assert.ok(_([false, false, true]).some(), 'aliased as "some"');
+	}
+	//
+	//expresso * -o 'can_collections_include'
+	//
+	,'can_collections_include' : function(assert) {
+	    assert.ok(_([1,2,3]).include(2), 'two is in the array');
+	    assert.ok(!_([1,3,9]).include(2), 'two is not in the array');
+	    assert.ok(_({moe:1, larry:3, curly:9}).contains(3), '_.include on objects checks their values');
+	}
+	//
+	//expresso * -o 'can_collections_invoke'
+	//
+	,'can_collections_invoke' : function(assert) {
+	    var list = [[5, 1, 7], [3, 2, 1]];
+	    var result = _(list).invoke('sort');
+	    assert.equal(result[0].join(', '), '1, 5, 7', 'first array sorted');
+	    assert.equal(result[1].join(', '), '1, 2, 3', 'second array sorted');
+	}
+	//
+	//expresso * -o 'can_collections_pluck'
+	//
+	,'can_collections_pluck' : function(assert) {
+	    var people = [{name : 'moe', age : 30}, {name : 'curly', age : 50}];
+    	assert.equal(_(people).pluck('name').join(', '), 'moe, curly', 'pulls names out of objects');
+	}
+	//
+	//expresso * -o 'can_collections_max'
+	//
+	,'can_collections_max' : function(assert) {
+	    assert.equal(3, _([1, 2, 3]).max(), 'can perform a regular Math.max');
+
+    	var neg = _([1, 2, 3]).max(function(num){ return -num; });
+    	assert.equal(neg, 1, 'can perform a computation-based max');
+	}
+	//
+	//expresso * -o 'can_collections_min'
+	//
+	,'can_collections_min' : function(assert) {
+	    assert.equal(1, _([1, 2, 3]).min(), 'can perform a regular Math.min');
+
+    	var neg = _([1, 2, 3]).min(function(num){ return -num; });
+    	assert.equal(neg, 3, 'can perform a computation-based min');
+	}
+	//
+	//expresso * -o 'can_collections_sortBy'
+	//
+	,'can_collections_sortBy' : function(assert) {
+	    var people = [{name : 'curly', age : 50}, {name : 'moe', age : 30}];
+    	people = _(people).sortBy(function(person){ return person.age; });
+    	assert.equal(_(people).pluck('name').join(', '), 'moe, curly', 'stooges sorted by age');
+	}
+	//
+	//expresso * -o 'can_collections_sortedIndex'
+	//
+	,'can_collections_sortedIndex' : function(assert) {
+	    var numbers = [10, 20, 30, 40, 50], num = 35;
+    	var index = _(numbers).sortedIndex(num);
+    	assert.equal(index, 3, '35 should be inserted at index 3');
+	}
+	//
+	//expresso * -o 'can_collections_toArray'
+	//
+	,'can_collections_toArray' : function(assert) {
+	    assert.ok(!_(arguments).isArray(), 'arguments object is not an array');
+    	assert.ok(_(_(arguments).toArray()).isArray(), 'arguments object converted into array');
+
+    	var numbers = _({one : 1, two : 2, three : 3}).toArray();
+    	assert.equal(numbers.join(', '), '1, 2, 3', 'object flattened into array');
 	}
 };
 
