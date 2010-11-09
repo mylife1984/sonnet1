@@ -164,7 +164,7 @@ module.exports = {
     	_([1, 2, 3]).each(function(num, index, arr) { 
     		if (_(arr).include(num)) answer = true; 
     	});
-    	assert.assert.ok(answer, 'can reference the original collection from inside the iterator');
+    	assert.ok(answer, 'can reference the original collection from inside the iterator');
 		
     	//对象
 		var answers = [];
@@ -180,7 +180,7 @@ module.exports = {
 	    _({range : 1, speed : 2, length : 3}).each(function(value,key){ 
 	    	answers.push(value); 
 	    });
-	    assert.assert.ok(answers.join(', '), '1, 2, 3', 'can iterate over objects with numeric length properties');
+	    assert.ok(answers.join(', '), '1, 2, 3', 'can iterate over objects with numeric length properties');
 	}
 	//
 	//expresso * -o 'can_collections_map'
