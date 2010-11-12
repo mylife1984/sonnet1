@@ -18,9 +18,13 @@ This project is just for learning expressjs web framework.
 	 
 # Running all tests
 
-	$ cd sonnet1/tests/demo
+	$ cd sonnet1
 	
-	$ expresso *
+	$ expresso tests/**/*
+
+# Documentation
+
+  please see [wiki](https://github.com/fzx/sonnet1/wiki/_pages) 
 	 
  -END-
  	 
