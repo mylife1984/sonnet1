@@ -1,0 +1,1752 @@
+/*-- 指针 --*/
+.cursor-hand {
+    cursor:hand;
+}
+/* 网格表头和单元格用图形表示时用 */
+.grid-background-container {
+    height:16px;
+    width:16px;
+}
+/* 附件 */
+.grid-attachment-header {
+    float:left;
+	background-image:url(../images/icon16/attachment.png);
+}
+/* 读否 */
+.grid-read-header{
+    float:left;
+	background-image:url(../images/icon16/read.png);
+}
+/* 有评论否 */
+.grid-comment-header{
+    float:left;
+	background-image:url(../images/comments.png);
+}/* 定制网格线 */
+.vline-on .x-grid3-col {
+    border-left:  1px solid #EEEEEE;
+    border-right: 1px solid #D2D2D2;
+    border-bottom:  1px solid #D2D2D2;
+}
+
+/* Also remove padding from table data (to compensate for added grid lines) */
+.vline-on .x-grid3-row td, .x-grid3-summary-row td {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+} 
+/* 定制网格行颜色 */
+.red-grid-row { 
+  background-color: #F5C0C0 !important; 
+} 
+.inactive-grid-row { 
+  background-color: #C0C0C0 !important; 
+} 
+.read-grid-row div{
+    font-weight:normal;
+}
+.unread-grid-row div {
+    font-weight:bold;
+}
+/* 在表单中显示 HTML 表格 */
+.divo-table {
+	width: 100%;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	padding: 3px;
+	border: 0px solid #9B9B9B
+	background-color: white;
+}
+
+.divo-table thead td, .divo-table thead th {
+	background-color: #F0F0F0; 
+	border: 0px solid #595959
+	text-align:center;
+}
+.icon-update {
+	background-image: url(../images/divo/edit.png )
+}
+.icon-delete {
+	background-image: url(../images/divo/delete.png )
+}
+.icon-activate {
+	background-image: url(../images/divo/publish.gif )
+}
+.icon-deactivate {
+	background-image: url(../images/divo/trash.gif )
+}
+.icon-select{
+	background-image: url(../images/divo/publish.gif )
+}
+.icon-undo {
+	background-image: url(../images/divo/undo.gif )
+}
+.icon-doc {
+	background-image: url(../images/version.gif )
+}
+.icon-email {
+	background-image: url(../images/email.gif )
+}
+.icon-source {
+	background-image: url(../images/cog.png )
+}
+.icon-action {
+	background-image: url(../images/settings.png )
+}
+.icon-valid {
+	background-image: url(../images/publish.gif )
+}
+.icon-invalid {
+	background-image: url(../images/redcross.gif )
+}
+.icon-none {
+	background-image: url(../images/file.gif )
+}
+.icon-out-of-scope {
+	background-image: url(../images/move_file.gif )
+}
+.icon-no-result {
+	background-image: url(../images/divo/file-remove.gif )
+}
+.icon-audit {
+	background-image: url(../images/export.gif )
+}
+.icon-preview {
+	background-image: url(../images/silk/printer.png )
+}
+.icon-user {
+	background-image: url(../images/user.gif )
+}
+.icon-info {
+	background-image: url(../images/version.gif )
+}
+.icon-win {
+	background-image: url(../images/divo/win.gif )
+}
+.icon-detail {
+	background-image: url(../images/search.gif )
+}
+.icon-pic {
+	background-image: url(../images/block-image.gif)
+}
+.icon-down{
+	background: url('../images/arrow_down.gif');
+}
+.icon-up{
+	background: url('../images/arrow_up.gif');
+}
+.icon-add {
+	background: url('../images/divo/add.gif');
+}
+.icon-script {
+	background: url('../images/silk/script.png');
+}
+.icon-checked {
+    background-image: url(../images/divo/checked2.gif )
+}
+.icon-unchecked {
+    background-image: url(../images/divo/unchecked2.gif )
+}
+
+
+/* 正在加载提示效果(注意：此段css必须放到文件最后，否则FF3下效果会不对) */
+.ext-el-mask-msg {
+    z-index: 20001;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border:none;
+    background:none;
+    padding:2px;
+    margin-top:20px;
+}
+.ext-el-mask-msg div {
+    padding:5px 10px 5px 10px;
+    background: #eee;
+    border:none;
+    color:white;
+    font:bold 11px verdana, arial, tahoma, helvetica, sans-serif;
+    cursor:wait;
+    height: 120px;
+    background-image:none;
+}
+.x-mask-loading div {
+    padding:5px 5px 5px 5px;
+    background: url( '../images/loading.gif' ) no-repeat;
+    line-height: 16px;
+    height: 71px;
+    width: 71px;
+    opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+/* 窗口顶部的显示区 */
+.divo-panel-header .x-panel-body {
+	background: #F0F0F0;
+}
+﻿/* 页面文字 */
+.common-text {
+	COLOR: #000000;
+	FONT-FAMILY: 'tahoma','宋体';
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: normal;
+	TEXT-DECORATION: none
+}
+.common-text tbody tr td {
+	COLOR: #000000;
+	FONT-FAMILY: 'tahoma','宋体';
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: normal;
+	TEXT-DECORATION: none
+}
+.common-text-bold {
+	COLOR: #000000;
+	FONT-FAMILY: 'tahoma','宋体';
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	TEXT-DECORATION: none
+}
+.page-title {
+	COLOR: #000000; 
+	FONT-FAMILY: '黑体'; 
+	FONT-SIZE: 18px; 
+	FONT-WEIGHT: normal; 
+	TEXT-DECORATION: none
+}
+/* boxSelect */
+ul.holder { margin: 0; overflow: hidden; height: auto ! important; }
+ul.holder li { float: left; display: inline; list-style-type: none; margin: 3px 2px 2px 1px; line-height: 1em; -moz-user-select: none}
+
+body.ext-ie7 ul.holder li {margin: 3px 0 2px 3px;line-height: 1.2em;padding-bottom: 2px}
+body.ext-ie6 ul.holder li {margin: 2px 0 2px 3px;line-height:1.1em;padding-bottom: 2px}
+body.ext-gecko ul.holder li {margin: 1px 0 2px 3px;}
+
+ul.holder li.bit-box { position:relative; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; border: 1px solid #CAD8F3; background: #DEE7F8; padding: 1px 15px 1px 5px; }
+ul.holder li.bit-hover { background: #BBCEF1; border: 1px solid #6D95E0; }
+ul.holder li.bit-box-focus { border-color: #598BEC; background: #598BEC; color: #fff; }
+ul.holder li.bit-input{}
+ul.holder li.bit-input input { margin: 1px 0 2px 0; border: 0; outline: 0; padding: 0; }
+ 
+ /* no left/right padding here please */
+ul.holder li.bit-input input.smallinput { width: 20px; }
+ul.holder li.bit-box a.closebutton { position: absolute; right: 4px; top: 5px; display: block; width: 7px; height: 7px; font-size: 1px; background: url(../images/icon12/close.gif); }
+ul.holder li.bit-box a.closebutton:hover { background-position: 7px; }
+ul.holder li.bit-box-focus a.closebutton, ul.holder li.bit-box-focus a.closebutton:hover { background-position: bottom; }
+li.bit-input input{background:none;}
+.ux-cell-value {
+	position:relative;
+	zoom:1;
+}
+.ux-cell-actions {
+	position:absolute;
+	right:0;
+	top:-2px;
+}
+.ux-cell-actions-left {
+	left:0;
+	top:-2px;
+}
+.ux-cell-action {
+	width:16px;
+	height:16px;
+	float:left;
+	cursor:pointer;
+	margin: 0 0 0 4px;
+}
+.ux-cell-actions-left .ux-cell-action {
+	margin: 0 4px 0 0;
+}
+
+/* eof */
+/* clickactionpanel 用默认ul样式 */
+.action-list{
+	margin:0;
+	padding:0;
+}
+.action-list li{
+	line-height:36px;
+	height:36px;
+}
+.action-list img{
+	width:24px;
+	height:24px;
+}
+.action-list li a{
+	font-size:16px;
+}
+.action-list li a:hover{
+	color:#CC6600;
+	text-decoration: none;
+	font-weight:bold;
+}
+/* 用于 ClickActionWithFocusPanel.js */
+.divo-list {
+    overflow:visible;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	z-index:1;
+}
+.divo-list-inner {
+	zoom:1;
+}
+.divo-list a {
+	text-decoration: none;
+	text-align:left;
+    color:black;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	line-height:21px;
+    cursor:pointer;
+    margin-top: 4px;
+	display:block;
+	padding-right:16px;
+	-moz-outline:none;
+	outline: 0 none;
+	zoom:1;
+}
+.divo-list a:hover {
+    background-color: #8cbbda;
+	text-decoration: none;
+}
+
+.divo-list a.active {
+	text-decoration: none;
+	font-weight:bold;
+	background:#ebf1e2!important;
+	border:1px solid #669900;	
+}
+
+.divo-list-site {
+    overflow:visible;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	z-index:1;
+}
+.divo-list-site-inner {
+	zoom:1;
+}
+.divo-list-site a {
+	text-decoration: none;
+	text-align:left;
+    color:black;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	line-height:21px;
+    cursor:pointer;
+    margin-top: 4px;
+	display:block;
+	padding-right:16px;
+	-moz-outline:none;
+	outline: 0 none;
+	zoom:1;
+}
+.divo-list-site a:hover {
+    background-color: #8cbbda;
+	text-decoration: none;
+}
+.divo-list-site a.active {
+    background: transparent url(../images/sview/active-item.png) no-repeat;
+	text-decoration: none;
+	color:#1860A8;
+	font-weight:bold;
+}
+/* ColumnMenu.js 用 */
+.x-column-menu {
+    background: #f0f0f0;
+    padding: 0;
+    margin: 0;
+}
+.x-column-menu .x-menu-list {
+    float: left;
+    padding: 2px 2px 2px 3px;
+    margin: 0;
+    background: #f0f0f0 url(../images/divo/menu.gif) repeat-y;
+}
+.x-column-menu .x-menu-item-icon {
+    margin: 0 10px 0 0;
+}
+.x-column-menu .x-menu-item-active {
+    margin-left: 0px;
+}
+/* DivoBasicForm 用 */
+.j-form-table {
+	width: 100%;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	padding: 3px;
+	border: 0px solid #9B9B9B;
+	border-collapse: collapse;
+	background-color: #f7f6f1;
+}
+
+.j-form-table tbody tr td .button {
+    margin-right: 5px;
+}
+
+.j-form-table thead td, .j-form-table thead th {
+	background-color: #E2E2E2; 
+	/*border: solid #9B9B9B;
+	border-width: 1px 0px 1px 0px;*/
+	font-weight: bold;
+	cursor: pointer;
+	text-align:center;
+}
+
+.j-form-table thead tr {
+	display: none;
+}
+
+.j-form-table thead td.valueHeader, .j-form-table thead th.valueHeader {
+	width: 80%;
+}
+
+.j-form-table thead td.labelHeader, .j-form-table thead th.labelHeader {
+	width: 20%;
+}
+
+.j-form-table tbody tr td {
+	/*background: #EEEEE4;*/
+	padding: 3px;
+	/*width: 80%;*/
+}
+
+.j-form-tableNoPadding tbody tr td {
+	/*background: #EEEEE4;*/
+	padding: 0px;
+	/*width: 80%;*/
+}
+
+.j-form-table tbody tr td.label {
+	font-weight: bold;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	color: #595959;
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+	width: 20%;
+	vertical-align: top;
+}
+
+.j-form-table tbody tr td.propertyLabel {
+	font-weight: bold;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	color: #595959;
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+	width: 70%;
+	vertical-align: top;
+}
+
+.j-form-table tbody tr td.titlePanel {
+	font-weight: bold;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	color: #595959;
+	width: 60%;
+	padding: 0px;
+}
+
+.j-form-table tbody tr td.errorPanel {
+	color: red;
+}
+
+.j-form-table tbody tr.alt td {
+	/* background: #E4E4D3; */
+	/*background-color: #F9F9F7; */
+	padding: 3px;
+}
+
+
+.j-form-table tbody tr.alt td.label {
+	font-weight: bold;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	color: #595959;
+}
+
+.j-form-table tbody tr.alt td.propertyLabel {
+	font-weight: bold;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	color: #595959;
+}
+
+.j-form-scroll-box {
+	border: 1px solid #808080;
+	overflow-y: scroll; 
+	height: 175px;
+	padding-left: 1px;
+}
+.j-form-boolean-box {
+	height: 25px;
+	padding-left: 1px;
+}
+.j-grid-table {
+	width: 100%;
+	font: 8pt Lucida, Grande, Arial, Helvetica, sans-serif;
+	padding: 3px;
+	border: 1px solid #C8C8C8;
+	border-collapse: collapse;
+}
+
+.j-grid-table a {	
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.j-grid-table a:link {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.j-grid-table a:hover {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.j-grid-table a:visited {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+
+.j-grid-table thead td, .j-grid-table thead th {
+	background-color: #f7f6f1; 
+	border: solid #C2CED5;
+	border-width: 1px 1px 1px 1px;
+	padding: 3px;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.j-grid-table thead td:hover {
+	background-color: #AFBFC9;
+}
+
+.j-grid-table thead td.versionLabelHeader {
+	width: 20%;	
+}
+
+.j-grid-table thead td.versionValueHeader {
+	width: 40%;	
+}
+
+.j-grid-table thead td.selectedUp, table thead th.selectedUp {
+	background-image:url(../images/divo/sortdown.gif);
+	background-repeat:no-repeat;
+	background-position: 95% 50%;
+	background-color: #AFBFC9;
+	padding-right: 3px;
+}
+		
+.j-grid-table thead td.selectedDown, table thead th.selectedDown {
+	background-image:url(../images/divo/sortup.gif);
+	background-repeat:no-repeat;
+	background-position:  95% 50%;
+	background-color: #AFBFC9;
+	padding-right: 3px;
+}
+
+.j-grid-table tbody tr td {   /* Row Color */
+	background: #f7f6f1;
+	padding: 3px;
+	border: solid #C8C8C8;
+	border-width: 1px 1px 1px 1px;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+
+.j-grid-table tbody tr.alt td {  /*Alt Row Color*/
+	background: #f7f6f1;
+	padding: 3px;
+	border: solid #C8C8C8;
+	border-width: 1px 1px 1px 1px;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+
+.j-grid-table tbody tr.selected td {
+	background: yellow;
+	padding: 3px;
+	border: solid #C8C8C8;
+	border-width: 1px 1px 1px 1px;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+
+.j-grid-table tbody tr.hovered td {
+	background: #FEDDB1;
+	padding: 3px;
+	border: solid #C8C8C8;
+	border-width: 1px 1px 1px 1px;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	cursor: pointer;
+}
+
+.j-grid-table tbody tr td.changed {
+	background: #ff9;
+}
+/* 右击树节点效果(divo.tree.DynamicTree用） */
+.x-node-ctx {
+	background: #eee !important;
+	border: 1px solid #ccc !important;
+}
+/* ---------------------
+ * 对 ExtJS 样式表的修正
+ * ---------------------
+*/
+
+/* 中文字体放大 */
+.x-layout-collapsed {
+    font-size: 14px;
+    FONT-FAMILY: 'tahoma','宋体';
+}
+.x-form-item-label {
+    font-size: 14px;
+    FONT-FAMILY: 'tahoma','宋体';
+}
+.x-tab-strip SPAN.x-tab-strip-text {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-panel-header {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-tree-node {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-grid3-hd-row TD {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-grid3-row TD {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	LINE-HEIGHT: 18px;
+}
+.x-tip .x-tip-bd {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-tip h3 {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-tip .x-tip-bd-inner {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-panel-tl .x-panel-header {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-form-field {
+	font-size: 13px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-small-editor .x-form-field {
+	font-size: 13px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-combo-list-item {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-menu-list-item {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-window-tl .x-window-header {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-form-item {
+	font-size: 13px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-grid-group-hd DIV {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-grid-empty {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+
+/* 解决 textField missing bottom line 问题 */
+.ext-ie .x-form-text {
+	margin-top: 1px;
+}
+/* 其他 */  
+.x-window-footer {
+	position: relative;
+	top: 0;
+	right: 0;
+}
+/* 改正 2.2.1 bug */
+.ext-ie .x-menu-item-icon {left: -24px;}
+.ext-strict .x-menu-item-icon {left: 3px;}
+.ext-ie6 .x-menu-item-icon {left: -24px;}
+
+.x-layout-split {
+    background-color:#D9E8FB;
+}
+
+
+/* END *//*-- FormIntro --*/
+.divo-formintro-container {
+   padding-left:5px;
+}
+
+.divo-formintro-description {
+   padding:5px 0 5px 0;
+}
+
+.divo-formintro-label {
+   margin-left:-5px;
+   float:left;
+   padding-right:5px;
+   color:#15428b;
+   font-weight:bold;
+}
+
+.divo-formintro-outersep{
+   position:relative;
+}
+
+.divo-formintro-sepx{
+   overflow:hidden;
+   background-image:url(../images/x-ux-formintro-sepx.png);
+   background-position:center;
+   background-repeat:repeat-x;
+}
+.x-grid3-summary-row{border-left:1px solid #fff;border-right:1px solid #fff;color:#333;background:#f1f2f4;}
+.x-grid3-summary-row .x-grid3-cell-inner{font-weight:bold;padding-bottom:4px;}
+/* .x-grid3-cell-first .x-grid3-cell-inner{padding-left:16px;} */
+.x-grid-hide-summary .x-grid3-summary-row{display:none;}
+.x-grid3-summary-msg{padding:4px 16px;font-weight:bold;}
+
+
+.x-grid3-gridsummary-row-inner{overflow:hidden;width:100%;}/* IE6 requires width:100% for hori. scroll to work */
+.x-grid3-gridsummary-row-offset{width:10000px;}
+.x-grid-hide-gridsummary .x-grid3-gridsummary-row-inner{display:none;}/* Ext.ux.plugins.HeaderButtons 用 */
+.ux-panel-header-btns-ct
+{
+    float: right;
+}
+.ux-panel-header-btns .x-btn
+{
+    margin-left: 2px;
+}
+.ext-ie .ux-panel-header-btns .x-btn button
+{
+    padding-top: 1px;
+}
+.ux-panel-header-btns .x-btn-icon .x-btn-center .x-btn-text
+{
+    background-position: 0 2px;
+    height: 12px;
+    width: 9px;
+}
+.ux-panel-header-btns .x-btn-text-icon .x-btn-center .x-btn-text
+{
+    background-position: 1px 3px;
+    padding: 0 0 0 11px;
+}
+.ext-ie .ux-panel-header-btns .x-btn-text-icon .x-btn-center .x-btn-text
+{
+    padding: 1px 0 0 13px;
+}
+
+.ext-ie .ux-panel-header-btns .x-btn-text-icon .x-btn-center
+{
+    padding-right: 4px;
+}
+
+.ux-panel-header-btns .x-btn-left
+{
+    width: 2px;
+    height: 15px;
+    background: url(../images/hd-btn-sprite.gif) no-repeat 0 0;
+}
+
+.ux-panel-header-btns .x-btn-right
+{
+    width: 2px;
+    height: 15px;
+    background: url(../images/hd-btn-sprite.gif) no-repeat 0 -15px;
+}
+
+.ux-panel-header-btns .x-btn-center
+{
+    background: url(../images/hd-btn-sprite.gif) repeat-x 0 -30px;
+    padding: 0 1px;
+}
+
+.ux-panel-header-btns .x-btn-left i, .ux-panel-header-btns .x-btn-right i
+{
+    width: 2px;
+}
+
+.ux-panel-header-btns .x-btn-text
+{
+	font-size:10px;
+    color: #3255B2;
+}
+
+.ux-panel-header-btns .x-btn-over .x-btn-text
+{
+    color: #264390;
+}
+
+.ux-panel-header-btns .x-btn-pressed .x-btn-text
+{
+    color: #264390;
+}
+
+.ux-panel-header-btns .x-btn-over .x-btn-left
+{
+    background-position: 0 -45px;
+}
+
+.ux-panel-header-btns .x-btn-over .x-btn-right
+{
+    background-position: 0 -60px;
+}
+
+.ux-panel-header-btns .x-btn-over .x-btn-center
+{
+    background-position: 0 -75px;
+}
+/* Ext.ux.form.ImageField */
+.x-form-imagefield {
+	text-align:right;
+	padding-right:17px;
+}
+.x-form-imagefield-image {
+	background:#fff;
+	border: 1px solid #B5B8C8;
+}
+img.x-form-magnifiedTextArea
+{
+   cursor: pointer;
+   height: 16px;
+   width: 16px;
+   background: url(../images/divo/max.gif);
+}/* Ext.ux.Multiselect 用 */
+.ux-mselect {
+	overflow: auto;
+	background: white;
+	position: relative; /* for calculating scroll offsets */
+	zoom: 1;
+	overflow: auto;
+}
+.ux-mselect-item {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	padding: 2px;
+	border: 1px solid #fff;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.ux-mselect-selected {
+	border: 1px dotted #a3bae9 !important;
+	background: #DFE8F6;
+	cursor: pointer;
+}
+.x-combo-list .x-combo-list-cursor{
+	border: 1px dotted #000000 !important;
+}
+
+.x-combo-list-item{
+	cursor:pointer;
+}
+
+.x-combo-list .x-combo-selected + .x-combo-selected{
+	border-top-color:#DFE8F6 !important;
+}
+
+.x-combo-list .x-combo-selected + .x-combo-selected.x-combo-list-cursor{
+	border-top-color:#000000 !important;
+}
+/* 大按钮显示区 */
+.divo-big-btn {
+	width:100%;
+	height:35px;
+	margin:5px auto;
+	border:solid 0px #4f4f4f;
+	overflow:hidden;
+}
+
+.divo-big-btn-left {
+    position: absolute;
+    top : 2px;
+    left: 5px;
+}
+.divo-big-btn-from-right {
+    position: absolute;
+    top : 2px;
+    right: 5px;
+}
+.divo-big-btn-right {
+    position: absolute;
+    top : 10px;
+    right: 5px;
+    text-decoration:none;
+    FONT-FAMILY: 'tahoma','宋体';
+    FONT-SIZE: 14px;
+    FONT-WEIGHT: normal;
+}
+.divo-big-btn ul{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.divo-big-btn ul li{
+	display: block;
+	float: left;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+.divo-big-btn ul li a {
+	width:105px;
+	padding:3px 0px 8px 0px;
+	margin:0px 0px 0px 0px;
+	display: block;
+	text-decoration:none;
+	FONT-FAMILY: 'tahoma','宋体';
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: normal;
+	color:#ccc;
+	border-right:solid 1px #ccc;
+}
+.divo-big-btn ul li img {
+	margin:0 0 -3px 0;
+}
+
+.divo-big-btn ul li a {
+   text-align: center;
+   text-decoration: none;
+   margin: 6px 10px 6px 0px;
+   padding: 2px 6px 2px 6px;
+   background-color: whiteSmoke;
+   border-color: #DEDEDE #BBB #BFBFBF #DEDEDE;
+   border-style: solid;
+   border-width: 1px;
+   color: #303030;   
+}
+
+.divo-big-btn ul li a:hover{
+	color:white;
+    background-color: #8cbbda;
+}
+/* 门户用(portal) */
+.x-portal .x-panel-dd-spacer {
+	margin-bottom: 10px;
+}
+.x-portlet {
+	margin-bottom: 10px;
+}
+.x-portlet .x-panel-ml {
+	padding-left: 2px;
+}
+.x-portlet .x-panel-mr {
+	padding-right: 2px;
+}
+.x-portlet .x-panel-bl {
+	padding-left: 2px;
+}
+.x-portlet .x-panel-br {
+	padding-right: 2px;
+}
+.x-portlet .x-panel-body {
+	background: white;
+}
+.x-portlet .x-panel-mc {
+	padding-top: 2px;
+}
+.x-portlet .x-panel-bc .x-panel-footer {
+	padding-bottom: 2px;
+}
+.x-portlet .x-panel-nofooter .x-panel-bc {
+	height: 2px;
+}
+/*  Ext.ux.grid.ProgressColumn 用 */
+.x-grid3-progresscol .x-grid3-cell-inner {
+  padding: 0px 0px 0px 5px;
+}
+
+.x-grid3-progresscol .x-progress-bar {
+  height: 16px;
+}
+
+.x-grid3-progresscol .x-progress-inner {
+  height: 16px;
+}
+
+.x-grid3-progresscol .x-progress-text-front-ie6 {
+  padding: 2.5px 5px;
+}
+
+.x-grid3-progresscol .x-progress-text-front {
+  padding: 2px 5px;
+}
+
+.x-progress-bar-red,.x-progress-bar-orange,.x-progress-bar-green {
+  border-bottom: 1px solid #7fa9e4;
+  float: left;
+  height: 16px;
+}
+
+.x-progress-bar-red {
+  background: #ff0000 url(../images/progress-bg-red.gif) repeat-x scroll left
+    center;
+  border-top: 1px solid #ecb7ad;
+}
+
+.x-progress-bar-orange {
+  background: #9cbfee url(../images/progress-bg-orange.gif) repeat-x scroll
+    left center;
+  border-right: 1px solid #deab7e;
+  border-top: 1px solid #d7b290;
+}
+
+.x-progress-bar-green {
+  background: #00ff00 url(../images/progress-bg-green.gif) repeat-x scroll
+    left center;
+  border-right: 1px solid #5bd976;
+  border-top: 1px solid #79e18f;
+}
+/* Ext.ux.grid.RowActions 用 */
+.ux-row-action-cell .x-grid3-cell-inner {
+	padding:1px 0 0 0;
+}
+.ux-row-action-item {
+	float:left;
+	min-width:16px;
+	height:16px;
+	background-repeat:no-repeat;
+	margin: 0 5px 0 0;
+	cursor:pointer;
+	overflow:hidden;
+}
+.ext-ie .ux-row-action-item {
+	width:16px;
+}
+.ext-ie .ux-row-action-text {
+	width:auto;
+}
+.ux-row-action-item span {
+	vertical-align:middle;
+	padding:0 0 0 20px;
+	line-height:18px;
+}
+.ext-ie .ux-row-action-item span {
+	width:auto;
+}
+.x-grid-group-hd div {
+	position:relative;
+	height:16px;
+}
+.ux-grow-action-item {
+	min-width:16px;
+	height:16px;
+	background-repeat:no-repeat;
+	background-position: 0 50% ! important;
+	margin: 0 0 0 4px;
+	padding: 0 ! important;
+	cursor:pointer;
+	float:left;
+}
+.ext-ie .ux-grow-action-item {
+	width:16px;
+}
+.ux-action-right {
+	float:right;
+	margin: 0 3px 0 2px;
+	padding: 0 ! important;
+}
+.ux-grow-action-text {
+	padding: 0 ! important;
+	margin:0 ! important;
+	background:transparent none ! important;
+	float:left;
+}
+ /* sortable.js */
+.handle {
+	display:block;
+	background:transparent;
+	text-align:left;
+	padding:1px;
+	margin-bottom:1px;
+	cursor : move;
+}
+		
+.handle:hover {
+	background:#E1ECFE;
+}
+
+/* -- li 的表格效果 -- */
+.sortable-box li {
+	margin:0 0 5px 0;
+	border:#dddddd 1px solid;
+	height:25px; line-height:25px; overflow:hidden;
+}
+/* SwfUpload */
+.SwfUploadPanel_iconAdd {
+	background-image:url(../images/upload_add.png) !important;
+}
+
+.SwfUploadPanel_iconUpload {
+	background-image:url(../images/upload_upload.png) !important;
+}
+
+.SwfUploadPanel_iconCancel {
+	background-image:url(../images/upload_cancel.png) !important;
+}
+
+.SwfUploadPanel_iconClear {
+    background-image:url(../images/upload_clear.png) !important;
+}
+/* ToastWindow.js 用 */
+.error {
+    background-image :url(../images/divo/icon_error.gif);
+}
+.information {
+    background-image:url(../images/divo/icon_info.gif) ! important;
+}
+/* Ext.ux.UploadDialog 用 */
+.ext-ux-uploaddialog-addbtn
+{
+	background: url('../images/divo/file-add.gif') no-repeat left center !important;
+}
+
+.ext-ux-uploaddialog-removebtn
+{
+	background: url('../images/divo/file-remove.gif') no-repeat left center !important;
+}
+
+.ext-ux-uploaddialog-resetbtn
+{
+	background: url('../images/divo/reset.gif') no-repeat left center !important;
+}
+
+.ext-ux-uploaddialog-uploadstartbtn
+{
+	background: url('../images/divo/upload-start.gif') no-repeat left center !important;
+}
+
+.ext-ux-uploaddialog-uploadstopbtn
+{
+	background: url('../images/divo/upload-stop.gif') no-repeat left center !important;
+}
+
+.ext-ux-uploaddialog-indicator-stoped
+{
+	width: 16px;
+	height: 16px;
+	background: url('../images/divo/done.gif') no-repeat center center;
+}
+
+.ext-ux-uploaddialog-indicator-processing
+{
+	width: 16px;
+	height: 16px;	
+	background: url('../images/divo/loading.gif') no-repeat center center;
+}
+
+.ext-ux-uploaddialog-state
+{
+	text-align: center;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+/* Queued */
+.ext-ux-uploaddialog-state-0
+{
+	background-image: url('../images/divo/uncheck.gif');
+}
+
+/* Finished */
+.ext-ux-uploaddialog-state-1
+{
+	background-image: url('../images/divo/check.gif');
+}
+
+/* Failed */
+.ext-ux-uploaddialog-state-2
+{
+	background-image: url('../images/divo/failed.gif');
+}
+
+/* Processing */
+.ext-ux-uploaddialog-state-3
+{
+	background-image: url('../images/divo/file-uploading.gif');	
+}
+
+/* Progress bar fix */
+.ext-ie7 .ext-ux-uploaddialog-dialog .x-progress-bar .x-progress-text div
+{
+	display: none;
+}
+
+.ext-ie7 .ext-ux-uploaddialog-dialog .x-progress-text-back
+{
+	position: absolute;
+	left: 0px;
+	right: 0px;
+}
+
+.ext-ie7 .ext-ux-uploaddialog-dialog .x-progress-text-back div
+{
+	width: auto !important;
+	white-space: nowrap;
+}
+/*-- 图片管理 --*/
+#divo-uploaded-image-panel .details{ 
+    padding: 10px; 
+    text-align: center; 
+} 
+#divo-uploaded-image-panel .details-info{ 
+    border-top: 1px solid #cccccc; 
+    font: 11px Arial, Helvetica, sans-serif; 
+    margin-top: 5px; 
+    padding-top: 5px; 
+    text-align: left; 
+} 
+#divo-uploaded-image-panel .details-info b{ 
+    color: #555555; 
+    display: block; 
+    margin-bottom: 4px; 
+} 
+#divo-uploaded-image-panel .details-info span{ 
+    display: block; 
+    margin-bottom: 5px; 
+    margin-left: 5px; 
+} 
+
+#divo-img-chooser-view{ 
+    background: white; 
+    font: 11px Arial, Helvetica, sans-serif;
+} 
+#divo-img-chooser-view .thumb{ 
+    background: #dddddd; 
+    padding: 3px; 
+} 
+#divo-img-chooser-view .thumb img{ 
+    height: 60px; 
+    width: 80px; 
+} 
+#divo-img-chooser-view .thumb-wrap{ 
+    float: left; 
+    margin: 4px; 
+    margin-right: 0; 
+    padding: 5px;
+} 
+#divo-img-chooser-view .thumb-wrap span{ 
+    display: block; 
+    overflow: hidden; 
+    text-align: center; 
+} 
+#divo-img-chooser-view .x-view-over{
+    border:1px solid #dddddd; 
+    background: #efefef url(../js/ext/resources/images/default/grid/row-over.gif) repeat-x left top;
+    padding: 4px; 
+}
+#divo-img-chooser-view .x-view-selected{ 
+    background: #DFEDFF; 
+    border: 1px solid #6593cf; 
+    padding: 4px; 
+} 
+#divo-img-chooser-view .x-view-selected .thumb{ 
+    background:transparent; 
+}
+#divo-img-chooser-view .x-view-selected span{ 
+    color:#1A4D8F;
+}
+#divo-img-chooser-view .loading-indicator { 
+    font-size:11px; 
+	background-image:url('../images/loading.gif');
+    background-repeat: no-repeat; 
+    background-position: left; 
+    padding-left:20px; 
+    margin:10px; 
+} 
+/* 获取与 FengOffice 一样的 tab 效果 */
+.x-layout-collapsed{
+    border:0px;
+}
+#tabs-panel .x-panel-body-noheader, .x-panel-mc .x-panel-body {
+    border-top:0px;
+}
+.x-panel-body{
+	background-color: #F0F0F0;	
+}
+.x-tab-panel-header, .x-tab-panel-footer {
+	border: 0px;
+}
+.x-tab-panel-header {
+	border: 0px;
+	padding-bottom: 0px;
+}
+.x-tab-panel-body {
+    border: 0px;
+}
+
+/*--- tabpanel style ---*/
+.og-content-panel .x-toolbar {
+    background: #F0F0F0;
+    border-top: 0px none;
+    padding-top:5px;
+}
+
+.og-content-panel .x-tree .x-panel-tbar .x-toolbar {
+    border-top: 1px solid #99BBE8;
+}
+
+.og-content-panel .x-panel-bbar .x-toolbar {
+    background: transparent;
+    border-top: 0px none;
+}
+
+/*--- home ----*/
+#header {
+    background-color: white;
+    height: 55px;
+    overflow: hidden;
+}
+#footer {
+    height: 20px;
+    color: #666;
+    FONT-FAMILY: 'tahoma','宋体';
+    font-size:11px;
+    overflow: hidden;
+}
+#headerContent {
+    background-position: 2px 3px;
+    background-image: url(../images/goo/header_bottom.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    height: 55px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    text-align: left;
+}
+.headerLogoAndWorkspace {
+    float: left;
+}
+#logodiv {
+    background-image: url(../images/goo/logo.png);
+    position: relative;
+    margin: 5 auto;
+    text-align: left;
+    background-repeat: no-repeat;
+    height: 45px;
+    width: 45px;
+    margin-left: 15px;
+    margin-top:1px;
+}
+#wsCrumbsDiv {
+    position: relative;
+    height: 45px;
+    padding-top:0;
+}
+#userboxWrapper {
+    position: absolute;
+    top: 1px;
+    right: 0px;
+    font-size: 14px; 
+    FONT-FAMILY: 'tahoma','宋体';
+}
+
+#userbox {
+    background-image: url(../images/goo/userborder.png);
+    padding-bottom:8px;
+    padding-left: 10px;
+    padding-right: 0px;
+    padding-top:-20px;
+    margin-right:0px;
+}
+#copy {
+    padding: 2px 15px;
+    float: left;
+}
+
+/*---------- top message div ----------*/
+#msg-div {
+    position: absolute;
+    left: 35%;
+    width: 30%;
+    z-index:20000;
+    text-align:center;
+    cursor: pointer;
+}
+#msg-div h3 {
+    float: left;
+    margin-right: 5px;
+}
+#msg-div .err h3 {
+    color: #AA0000;
+}
+#msg-div .reminder h3 {
+    color: #008800;
+}
+.og-box-tl {
+    background: url(../images/goo/box/corners.png) no-repeat top left;
+    padding-left: 4px;
+}
+.og-box-tc {
+    padding-top: 4px;
+    background: #fffbbb;
+    border-top: 1px solid #E1B269;
+}
+.og-box-tr {
+    background: url(../images/goo/box/corners.png) no-repeat top right;
+    padding-right: 4px;
+}
+.og-box-ml {
+    padding-left: 4px;
+    background: #fffbbb;
+    border-left: 1px solid #E1B269;
+}
+.og-box-mc {
+    background: #fffbbb;
+    FONT-FAMILY: 'tahoma','宋体';
+    font-size: 14px;
+}
+.og-box-mr {
+    padding-right: 4px;
+    background: #fffbbb;
+    border-right: 1px solid #E1B269;
+}
+.og-box-bl {
+    padding-left: 4px;
+    background:transparent url(../images/goo/box/corners.png) no-repeat scroll bottom left;zoom:1;
+    
+}
+.og-box-bc {
+    padding-bottom: 4px;
+    background: #fffbbb;
+    border-bottom: 1px solid #E1B269;
+}
+.og-box-br {
+    padding-right: 4px;
+    background:transparent url(../images/goo/box/corners.png) repeat bottom right;zoom:1;
+}
+/* EOP */
+
+/*------ loading ------------*/
+#loading{
+	position:absolute;
+	border:1px solid #6593cf;background:#c3daf9;
+	width:450px;
+	left:40%;
+	top:45%;
+	padding:2px;
+	z-index:20001;
+    height:auto;
+}
+.loading-ini{
+	color:#555;
+	padding:3px;
+	margin:0;
+    text-align:center;
+    height:auto;
+}
+
+#loading div {
+    padding:3px 5px 3px 5px;	
+    background:#fff;
+    border:1px solid #a3bad9;
+    color:#222;
+	FONT-FAMILY: 'tahoma','宋体';
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+    cursor:wait;
+}
+/*-- 登录界面 --*/ 
+.login-window .x-window-body {
+    background-color:#6d75a3;
+} 
+.login-window .x-panel-body {
+    background:none!important;
+}
+.login-window-softwareLabel {
+    font-weight:bold;
+    font-size:14px;
+    text-align:right;
+    padding:5px 10px 0 10px;
+    color:#ffffff;
+}
+.login-window-editionLabel {
+    font-size:14px;
+    text-align:right;
+    padding:5px 10px 0 10px;
+    color:#2D5094;
+}
+.login-window-versionLabel {
+    position:absolute;
+    bottom:55px;
+    right:15px;
+    font-size:14px;
+    color:#2D5094;
+}
+.login-window-formPanel {
+    background-color:#A1ACD6;
+	 width:480px;
+    /* //上 右 下 左 */
+    margin:20px 0 0 0;
+}
+html, body {
+	height:100%;
+	margin:0;
+	border:0;
+}
+a { color:#333;text-decoration:none }
+a:hover { color:#06C; text-decoration:underline }
+
+.icon-menu-overview {
+	background-image: url(../images/goo/overview.png )
+}
+.icon-divo-admin-user-Main {
+    background-image: url(../images/menus/user.gif )
+}
+.icon-divo-admin-group-Main {
+    background-image: url(../images/menus/group.gif )
+}
+.icon-divo-admin-menu-Main {
+    background-image: url(../images/menus/menu.gif )
+}
+.icon-divo-admin-dept-Main {
+    background-image: url(../images/menus/chart_organisation.png )
+}
+.icon-divo-zd-recipe-Main {
+    background-image: url(../images/menus/file.gif )
+}
+.icon-divo-zd-queryrecipe-Main {
+    background-image: url(../images/menus/file.gif )
+}
+.icon-divo-zd-unitinfo-Main {
+    background-image: url(../images/menus/file.gif )
+}
+.icon-divo-zd-waterroad-Main {
+    background-image: url(../images/menus/file.gif)
+}
+.icon-divo-zd-work-Main {
+    background-image: url(../images/menus/file.gif )
+}
+.icon-divo-zd-vehicle-Main {
+    background-image: url(../images/menus/file.gif )
+}
+.icon-divo-zd-otherdata-Main {
+    background-image: url(../images/menus/file.gif )
+}
+.icon-divo-zd-show-Main {
+    background-image: url(../images/menus/file.gif)
+}
+.icon-divo-zd-equipment-Main {
+    background-image: url(../images/menus/file.gif)
+}
+.icon-divo-zd-plan-Main {
+    background-image: url(../images/menus/file.gif)
+}
+.icon-divo-zd-activity-Main {
+    background-image: url(../images/menus/file.gif )
+}
+
+/* 首页用 */
+
+/* -- 顶部总标题 -- */
+.dashWorkspace {
+    padding-bottom: 4px;
+    border-bottom: 1px solid #AAA;
+    width: 100%;
+    color: #666;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+.dashWorkspace .name {
+    font-size: 200%;
+    font-weight: bolder;
+}
+
+.dashActions {
+    position: absolute;
+    top: 19px;
+    right: 30px;
+}
+
+.dashActions .viewRefresh {
+    cursor: pointer;
+	FONT-FAMILY: 'tahoma','宋体';
+	FONT-SIZE: 14px;
+}
+
+/* -- 各窗口标题等通用样式 -- */
+.dashHeader {
+    padding: 2px 10px;
+    border-bottom: 1px solid;
+}
+
+.dashHeader .dashTitle {
+	FONT-FAMILY: 'tahoma','宋体';
+	FONT-SIZE: 14px;
+    font-weight: bolder;
+    border-bottom: 0px solid;
+}
+
+.dashSubtitle {
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #AAA;
+}
+
+.dashAltRow {
+    background-color: #ECEFF7;
+}
+
+.coViewBody {
+    padding: 10px;
+    background: white;
+}
+
+.coViewBody div {
+	FONT-FAMILY: 'tahoma','宋体';
+	FONT-SIZE: 14px;
+}
+
+.coViewBody td {
+	FONT-FAMILY: 'tahoma','宋体';
+	FONT-SIZE: 14px;
+}
+
+.coViewTopRight {
+    width: 1%;
+    min-width: 12px;
+    height: 12px;
+    background-image: url(../images/goo/shcornertop.png);
+    background-repeat: no-repeat;
+}
+
+.coViewRight {
+    background-image: url(../images/goo/shr.png);
+    background-repeat: repeat-y;
+}
+
+.coViewBottomRight {
+    background-image: url(../images/goo/shcorner.png);
+    background-repeat: no-repeat;
+    width: 1%;
+    min-width: 12px;
+    height: 12px;
+}
+
+.coViewBottom {
+    background-image: url(../images/goo/shb.png);
+    background-repeat: repeat-x;
+}
+
+.coViewBottomLeft {
+    background-image: url(../images/goo/shcornerbottom.png);
+    width: 1%;
+    min-width: 12px;
+    height: 12px;
+    background-repeat: no-repeat;
+}
+
+.dash-expander {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.ico-dash-expanded {
+    background: transparent url(../images/goo/all_16_16_vertical.png) no-repeat scroll 0 -19px !important;
+}
+
+.ico-dash-collapsed {
+    background: transparent url(../images/goo/all_16_16_vertical.png) no-repeat scroll 0 -1155px !important;
+}
+
+/* -- 提醒事项 -- */
+.dashTodo .dashHeader {
+    color: rgb(101, 82, 5);
+    background: rgb(246, 214, 78);
+    border-color: rgb(201, 163, 10);
+}
+
+.dashTodo .coViewBody {
+    background: #FFF2BF;
+    color: rgb(101, 82, 5);
+}
+
+.dashTodo .dashAltRow {
+    background-color: #FFE099;
+}
+
+.dashTodo .internalLink {
+    color: rgb(101, 82, 5);
+}
+
+/* -- 最近的活动 -- */
+.dashActivity .dashHeader {
+    color: rgb(90, 82, 101);
+    background: rgb(222, 214, 246);
+    border-color: rgb(180, 163, 201);
+}
+
+.dashActivity .coViewBody {
+    background:#FFFFFFF;
+    color:
+    rgb(90, 82, 101);
+}
+
+.dashActivity .dashAltRow {
+    background-color: #EFE0FF;
+}
+
+.dashActivity .internalLink {
+    color: rgb(90, 82, 101);
+}
+
+.dashActivity .previewText {
+    color: rgb(136, 136, 136);
+}
+
+
+/* END */
+
+
+/* 修理 */
+.icon-vehicle-repair {
+	background-image: url(../images/silk/wrench.png )
+}
+/* 出动 */
+.icon-vehicle-out {
+	background-image: url(../images/divo/busy.png )
+}
+/* 执勤 */
+.icon-vehicle-ready {
+	background-image: url(../images/online.png)
+}
+/* 公务 */
+.icon-vehicle-train {
+	background-image: url(../images/silk/car.png )
+}
+.x-zd-form-imagefield {
+    text-align:right;
+    padding-right:17px;
+}
+.x-zd-form-imagefield-image {
+    text-align:right;
+    padding-right:17px;
+    width : 300;
+    height : 300;
+}

@@ -1,9 +1,34 @@
 #coding=utf-8
-from compress.utils import filter_css, filter_js
 import fnmatch
 import os
 
 js_files = []
+
+def save_file(filename, contents):
+    fd = open(filename, 'w+')
+    fd.write(contents)
+    fd.close()
+
+def concat(filenames, separator=''):
+    r = ''
+
+    for filename in filenames:
+        fd = open(filename, 'r')
+        r += fd.read()
+        r += separator
+        fd.close()
+
+    return r
+
+def filter_css(css, verbose=False):
+    output = concat(css['source_filenames'])
+
+    save_file(css['output_filename'], output)
+
+def filter_js(js, verbose=False):
+    output = concat(js['source_filenames'], ';') # add a ; between each files to make sure every file is properly "closed"
+
+    save_file(js['output_filename'], output)
 
 def walk_all_files(root, patterns='*'):
     """遍历指定目录的全部子目录，搜索指定模式的文件。

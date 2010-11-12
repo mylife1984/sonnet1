@@ -1318,7 +1318,7 @@ Ext.apply(divo, {
 ;/**
  * 常用图标路径
  */
-divo.iconUrl = "/public/images/"
+divo.iconUrl = "images/"
 
 Ext.apply(divo,
 {
@@ -25366,11 +25366,11 @@ divo.homeApp = function() {
 	return {
         init: function(){
             if (Ext.isIE)
-                Ext.util.CSS.swapStyleSheet("css-patch","public/css/ie-patch.css?v=1")
+                Ext.util.CSS.swapStyleSheet("css-patch","css/ie-patch.css?v=1")
             if (Ext.isChrome)
-                Ext.util.CSS.swapStyleSheet("css-patch","public/css/chrome-patch.css?v=1")
+                Ext.util.CSS.swapStyleSheet("css-patch","css/chrome-patch.css?v=1")
             if (Ext.isGecko)
-                Ext.util.CSS.swapStyleSheet("css-patch","public/css/firefox-patch.css?v=1")
+                Ext.util.CSS.swapStyleSheet("css-patch","css/firefox-patch.css?v=1")
 
             new divo.home.Main({
                  id : 'home-app'
@@ -25417,7 +25417,7 @@ divo.home.Main = Ext.extend(Ext.Viewport, {
 				}),	{
 					region: 'west',
 					id: 'menu-panel',
-					title: '<img src="public/images/silk/application_double.png" />&nbsp;菜单导航',
+					title: '<img src="images/silk/application_double.png" />&nbsp;菜单导航',
 					collapsedTitle : '菜单导航',
 					split: true,
 					stateful :  true,
@@ -25880,7 +25880,7 @@ divo.home.DashWorkspacePanel = Ext.extend(divo.home.DashWorkspaceBasePanel, {
 '</div>',
 '<div class="dashActions">',
 '	<a class="internalLink" href="#">',
-'		<div id="dash-refresh" class="viewRefresh"><img src="/public/images/divo/refresh.gif"/>&nbsp;刷新</div>',
+'		<div id="dash-refresh" class="viewRefresh"><img src="images/divo/refresh.gif"/>&nbsp;刷新</div>',
 '	</a>',
 '</div>',
 '',
