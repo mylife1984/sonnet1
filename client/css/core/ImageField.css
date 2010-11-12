@@ -1,0 +1,9 @@
+/* Ext.ux.form.ImageField */
+.x-form-imagefield {
+	text-align:right;
+	padding-right:17px;
+}
+.x-form-imagefield-image {
+	background:#fff;
+	border: 1px solid #B5B8C8;
+}

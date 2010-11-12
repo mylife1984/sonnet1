@@ -1,0 +1,33 @@
+/*-- 登录界面 --*/ 
+.login-window .x-window-body {
+    background-color:#6d75a3;
+} 
+.login-window .x-panel-body {
+    background:none!important;
+}
+.login-window-softwareLabel {
+    font-weight:bold;
+    font-size:14px;
+    text-align:right;
+    padding:5px 10px 0 10px;
+    color:#ffffff;
+}
+.login-window-editionLabel {
+    font-size:14px;
+    text-align:right;
+    padding:5px 10px 0 10px;
+    color:#2D5094;
+}
+.login-window-versionLabel {
+    position:absolute;
+    bottom:55px;
+    right:15px;
+    font-size:14px;
+    color:#2D5094;
+}
+.login-window-formPanel {
+    background-color:#A1ACD6;
+	 width:480px;
+    /* //上 右 下 左 */
+    margin:20px 0 0 0;
+}

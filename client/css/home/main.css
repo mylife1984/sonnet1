@@ -1,0 +1,8 @@
+html, body {
+	height:100%;
+	margin:0;
+	border:0;
+}
+a { color:#333;text-decoration:none }
+a:hover { color:#06C; text-decoration:underline }
+

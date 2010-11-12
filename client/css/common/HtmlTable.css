@@ -1,0 +1,15 @@
+/* 在表单中显示 HTML 表格 */
+.divo-table {
+	width: 100%;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	padding: 3px;
+	border: 0px solid #9B9B9B
+	background-color: white;
+}
+
+.divo-table thead td, .divo-table thead th {
+	background-color: #F0F0F0; 
+	border: 0px solid #595959
+	text-align:center;
+}

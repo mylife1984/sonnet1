@@ -1,0 +1,29 @@
+/*------ loading ------------*/
+#loading{
+	position:absolute;
+	border:1px solid #6593cf;background:#c3daf9;
+	width:450px;
+	left:40%;
+	top:45%;
+	padding:2px;
+	z-index:20001;
+    height:auto;
+}
+.loading-ini{
+	color:#555;
+	padding:3px;
+	margin:0;
+    text-align:center;
+    height:auto;
+}
+
+#loading div {
+    padding:3px 5px 3px 5px;	
+    background:#fff;
+    border:1px solid #a3bad9;
+    color:#222;
+	FONT-FAMILY: 'tahoma','宋体';
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+    cursor:wait;
+}

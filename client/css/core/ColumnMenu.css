@@ -1,0 +1,18 @@
+/* ColumnMenu.js 用 */
+.x-column-menu {
+    background: #f0f0f0;
+    padding: 0;
+    margin: 0;
+}
+.x-column-menu .x-menu-list {
+    float: left;
+    padding: 2px 2px 2px 3px;
+    margin: 0;
+    background: #f0f0f0 url(../images/divo/menu.gif) repeat-y;
+}
+.x-column-menu .x-menu-item-icon {
+    margin: 0 10px 0 0;
+}
+.x-column-menu .x-menu-item-active {
+    margin-left: 0px;
+}

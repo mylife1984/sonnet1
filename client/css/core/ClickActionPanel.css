@@ -1,0 +1,21 @@
+/* clickactionpanel 用默认ul样式 */
+.action-list{
+	margin:0;
+	padding:0;
+}
+.action-list li{
+	line-height:36px;
+	height:36px;
+}
+.action-list img{
+	width:24px;
+	height:24px;
+}
+.action-list li a{
+	font-size:16px;
+}
+.action-list li a:hover{
+	color:#CC6600;
+	text-decoration: none;
+	font-weight:bold;
+}

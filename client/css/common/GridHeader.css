@@ -1,0 +1,20 @@
+/* 网格表头和单元格用图形表示时用 */
+.grid-background-container {
+    height:16px;
+    width:16px;
+}
+/* 附件 */
+.grid-attachment-header {
+    float:left;
+	background-image:url(../images/icon16/attachment.png);
+}
+/* 读否 */
+.grid-read-header{
+    float:left;
+	background-image:url(../images/icon16/read.png);
+}
+/* 有评论否 */
+.grid-comment-header{
+    float:left;
+	background-image:url(../images/comments.png);
+}

@@ -1,0 +1,218 @@
+/* DivoBasicForm 用 */
+.j-form-table {
+	width: 100%;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	padding: 3px;
+	border: 0px solid #9B9B9B;
+	border-collapse: collapse;
+	background-color: #f7f6f1;
+}
+
+.j-form-table tbody tr td .button {
+    margin-right: 5px;
+}
+
+.j-form-table thead td, .j-form-table thead th {
+	background-color: #E2E2E2; 
+	/*border: solid #9B9B9B;
+	border-width: 1px 0px 1px 0px;*/
+	font-weight: bold;
+	cursor: pointer;
+	text-align:center;
+}
+
+.j-form-table thead tr {
+	display: none;
+}
+
+.j-form-table thead td.valueHeader, .j-form-table thead th.valueHeader {
+	width: 80%;
+}
+
+.j-form-table thead td.labelHeader, .j-form-table thead th.labelHeader {
+	width: 20%;
+}
+
+.j-form-table tbody tr td {
+	/*background: #EEEEE4;*/
+	padding: 3px;
+	/*width: 80%;*/
+}
+
+.j-form-tableNoPadding tbody tr td {
+	/*background: #EEEEE4;*/
+	padding: 0px;
+	/*width: 80%;*/
+}
+
+.j-form-table tbody tr td.label {
+	font-weight: bold;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	color: #595959;
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+	width: 20%;
+	vertical-align: top;
+}
+
+.j-form-table tbody tr td.propertyLabel {
+	font-weight: bold;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	color: #595959;
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+	width: 70%;
+	vertical-align: top;
+}
+
+.j-form-table tbody tr td.titlePanel {
+	font-weight: bold;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	color: #595959;
+	width: 60%;
+	padding: 0px;
+}
+
+.j-form-table tbody tr td.errorPanel {
+	color: red;
+}
+
+.j-form-table tbody tr.alt td {
+	/* background: #E4E4D3; */
+	/*background-color: #F9F9F7; */
+	padding: 3px;
+}
+
+
+.j-form-table tbody tr.alt td.label {
+	font-weight: bold;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	color: #595959;
+}
+
+.j-form-table tbody tr.alt td.propertyLabel {
+	font-weight: bold;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	color: #595959;
+}
+
+.j-form-scroll-box {
+	border: 1px solid #808080;
+	overflow-y: scroll; 
+	height: 175px;
+	padding-left: 1px;
+}
+.j-form-boolean-box {
+	height: 25px;
+	padding-left: 1px;
+}
+.j-grid-table {
+	width: 100%;
+	font: 8pt Lucida, Grande, Arial, Helvetica, sans-serif;
+	padding: 3px;
+	border: 1px solid #C8C8C8;
+	border-collapse: collapse;
+}
+
+.j-grid-table a {	
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.j-grid-table a:link {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.j-grid-table a:hover {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.j-grid-table a:visited {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+
+.j-grid-table thead td, .j-grid-table thead th {
+	background-color: #f7f6f1; 
+	border: solid #C2CED5;
+	border-width: 1px 1px 1px 1px;
+	padding: 3px;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.j-grid-table thead td:hover {
+	background-color: #AFBFC9;
+}
+
+.j-grid-table thead td.versionLabelHeader {
+	width: 20%;	
+}
+
+.j-grid-table thead td.versionValueHeader {
+	width: 40%;	
+}
+
+.j-grid-table thead td.selectedUp, table thead th.selectedUp {
+	background-image:url(../images/divo/sortdown.gif);
+	background-repeat:no-repeat;
+	background-position: 95% 50%;
+	background-color: #AFBFC9;
+	padding-right: 3px;
+}
+		
+.j-grid-table thead td.selectedDown, table thead th.selectedDown {
+	background-image:url(../images/divo/sortup.gif);
+	background-repeat:no-repeat;
+	background-position:  95% 50%;
+	background-color: #AFBFC9;
+	padding-right: 3px;
+}
+
+.j-grid-table tbody tr td {   /* Row Color */
+	background: #f7f6f1;
+	padding: 3px;
+	border: solid #C8C8C8;
+	border-width: 1px 1px 1px 1px;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+
+.j-grid-table tbody tr.alt td {  /*Alt Row Color*/
+	background: #f7f6f1;
+	padding: 3px;
+	border: solid #C8C8C8;
+	border-width: 1px 1px 1px 1px;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+
+.j-grid-table tbody tr.selected td {
+	background: yellow;
+	padding: 3px;
+	border: solid #C8C8C8;
+	border-width: 1px 1px 1px 1px;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+
+.j-grid-table tbody tr.hovered td {
+	background: #FEDDB1;
+	padding: 3px;
+	border: solid #C8C8C8;
+	border-width: 1px 1px 1px 1px;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	cursor: pointer;
+}
+
+.j-grid-table tbody tr td.changed {
+	background: #ff9;
+}

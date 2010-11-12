@@ -1,0 +1,7 @@
+/* ToastWindow.js 用 */
+.error {
+    background-image :url(../images/divo/icon_error.gif);
+}
+.information {
+    background-image:url(../images/divo/icon_info.gif) ! important;
+}

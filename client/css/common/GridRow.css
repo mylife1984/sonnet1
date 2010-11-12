@@ -1,0 +1,13 @@
+/* 定制网格行颜色 */
+.red-grid-row { 
+  background-color: #F5C0C0 !important; 
+} 
+.inactive-grid-row { 
+  background-color: #C0C0C0 !important; 
+} 
+.read-grid-row div{
+    font-weight:normal;
+}
+.unread-grid-row div {
+    font-weight:bold;
+}

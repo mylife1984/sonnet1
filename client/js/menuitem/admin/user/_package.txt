@@ -1,0 +1,10 @@
+FileName
+========
+Main.js
+/widgets/Namespace.js
+
+/widgets/grid/admin/UserGrid.js
+/widgets/form/admin/UserAddOrEditForm.js
+
+/widgets/win/admin/UserAddOrEditWindow.js
+

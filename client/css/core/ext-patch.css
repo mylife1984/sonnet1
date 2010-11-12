@@ -1,0 +1,105 @@
+/* ---------------------
+ * 对 ExtJS 样式表的修正
+ * ---------------------
+*/
+
+/* 中文字体放大 */
+.x-layout-collapsed {
+    font-size: 14px;
+    FONT-FAMILY: 'tahoma','宋体';
+}
+.x-form-item-label {
+    font-size: 14px;
+    FONT-FAMILY: 'tahoma','宋体';
+}
+.x-tab-strip SPAN.x-tab-strip-text {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-panel-header {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-tree-node {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-grid3-hd-row TD {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-grid3-row TD {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	LINE-HEIGHT: 18px;
+}
+.x-tip .x-tip-bd {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-tip h3 {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-tip .x-tip-bd-inner {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-panel-tl .x-panel-header {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-form-field {
+	font-size: 13px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-small-editor .x-form-field {
+	font-size: 13px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-combo-list-item {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-menu-list-item {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-window-tl .x-window-header {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-form-item {
+	font-size: 13px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-grid-group-hd DIV {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+.x-grid-empty {
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+}
+
+/* 解决 textField missing bottom line 问题 */
+.ext-ie .x-form-text {
+	margin-top: 1px;
+}
+/* 其他 */  
+.x-window-footer {
+	position: relative;
+	top: 0;
+	right: 0;
+}
+/* 改正 2.2.1 bug */
+.ext-ie .x-menu-item-icon {left: -24px;}
+.ext-strict .x-menu-item-icon {left: 3px;}
+.ext-ie6 .x-menu-item-icon {left: -24px;}
+
+.x-layout-split {
+    background-color:#D9E8FB;
+}
+
+
+/* END */

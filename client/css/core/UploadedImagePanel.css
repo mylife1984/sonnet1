@@ -1,0 +1,70 @@
+/*-- 图片管理 --*/
+#divo-uploaded-image-panel .details{ 
+    padding: 10px; 
+    text-align: center; 
+} 
+#divo-uploaded-image-panel .details-info{ 
+    border-top: 1px solid #cccccc; 
+    font: 11px Arial, Helvetica, sans-serif; 
+    margin-top: 5px; 
+    padding-top: 5px; 
+    text-align: left; 
+} 
+#divo-uploaded-image-panel .details-info b{ 
+    color: #555555; 
+    display: block; 
+    margin-bottom: 4px; 
+} 
+#divo-uploaded-image-panel .details-info span{ 
+    display: block; 
+    margin-bottom: 5px; 
+    margin-left: 5px; 
+} 
+
+#divo-img-chooser-view{ 
+    background: white; 
+    font: 11px Arial, Helvetica, sans-serif;
+} 
+#divo-img-chooser-view .thumb{ 
+    background: #dddddd; 
+    padding: 3px; 
+} 
+#divo-img-chooser-view .thumb img{ 
+    height: 60px; 
+    width: 80px; 
+} 
+#divo-img-chooser-view .thumb-wrap{ 
+    float: left; 
+    margin: 4px; 
+    margin-right: 0; 
+    padding: 5px;
+} 
+#divo-img-chooser-view .thumb-wrap span{ 
+    display: block; 
+    overflow: hidden; 
+    text-align: center; 
+} 
+#divo-img-chooser-view .x-view-over{
+    border:1px solid #dddddd; 
+    background: #efefef url(../js/ext/resources/images/default/grid/row-over.gif) repeat-x left top;
+    padding: 4px; 
+}
+#divo-img-chooser-view .x-view-selected{ 
+    background: #DFEDFF; 
+    border: 1px solid #6593cf; 
+    padding: 4px; 
+} 
+#divo-img-chooser-view .x-view-selected .thumb{ 
+    background:transparent; 
+}
+#divo-img-chooser-view .x-view-selected span{ 
+    color:#1A4D8F;
+}
+#divo-img-chooser-view .loading-indicator { 
+    font-size:11px; 
+	background-image:url('../images/loading.gif');
+    background-repeat: no-repeat; 
+    background-position: left; 
+    padding-left:20px; 
+    margin:10px; 
+} 

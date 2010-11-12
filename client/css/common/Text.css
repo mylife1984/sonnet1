@@ -1,0 +1,29 @@
+﻿/* 页面文字 */
+.common-text {
+	COLOR: #000000;
+	FONT-FAMILY: 'tahoma','宋体';
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: normal;
+	TEXT-DECORATION: none
+}
+.common-text tbody tr td {
+	COLOR: #000000;
+	FONT-FAMILY: 'tahoma','宋体';
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: normal;
+	TEXT-DECORATION: none
+}
+.common-text-bold {
+	COLOR: #000000;
+	FONT-FAMILY: 'tahoma','宋体';
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	TEXT-DECORATION: none
+}
+.page-title {
+	COLOR: #000000; 
+	FONT-FAMILY: '黑体'; 
+	FONT-SIZE: 18px; 
+	FONT-WEIGHT: normal; 
+	TEXT-DECORATION: none
+}

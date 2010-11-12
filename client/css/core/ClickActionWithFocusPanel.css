@@ -1,0 +1,71 @@
+/* 用于 ClickActionWithFocusPanel.js */
+.divo-list {
+    overflow:visible;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	z-index:1;
+}
+.divo-list-inner {
+	zoom:1;
+}
+.divo-list a {
+	text-decoration: none;
+	text-align:left;
+    color:black;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	line-height:21px;
+    cursor:pointer;
+    margin-top: 4px;
+	display:block;
+	padding-right:16px;
+	-moz-outline:none;
+	outline: 0 none;
+	zoom:1;
+}
+.divo-list a:hover {
+    background-color: #8cbbda;
+	text-decoration: none;
+}
+
+.divo-list a.active {
+	text-decoration: none;
+	font-weight:bold;
+	background:#ebf1e2!important;
+	border:1px solid #669900;	
+}
+
+.divo-list-site {
+    overflow:visible;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	z-index:1;
+}
+.divo-list-site-inner {
+	zoom:1;
+}
+.divo-list-site a {
+	text-decoration: none;
+	text-align:left;
+    color:black;
+	font-size: 14px;
+	FONT-FAMILY: 'tahoma','宋体';
+	line-height:21px;
+    cursor:pointer;
+    margin-top: 4px;
+	display:block;
+	padding-right:16px;
+	-moz-outline:none;
+	outline: 0 none;
+	zoom:1;
+}
+.divo-list-site a:hover {
+    background-color: #8cbbda;
+	text-decoration: none;
+}
+.divo-list-site a.active {
+    background: transparent url(../images/sview/active-item.png) no-repeat;
+	text-decoration: none;
+	color:#1860A8;
+	font-weight:bold;
+}

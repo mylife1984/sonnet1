@@ -1,0 +1,20 @@
+ /* sortable.js */
+.handle {
+	display:block;
+	background:transparent;
+	text-align:left;
+	padding:1px;
+	margin-bottom:1px;
+	cursor : move;
+}
+		
+.handle:hover {
+	background:#E1ECFE;
+}
+
+/* -- li 的表格效果 -- */
+.sortable-box li {
+	margin:0 0 5px 0;
+	border:#dddddd 1px solid;
+	height:25px; line-height:25px; overflow:hidden;
+}

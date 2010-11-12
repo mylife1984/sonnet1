@@ -1,0 +1,85 @@
+.icon-update {
+	background-image: url(../images/divo/edit.png )
+}
+.icon-delete {
+	background-image: url(../images/divo/delete.png )
+}
+.icon-activate {
+	background-image: url(../images/divo/publish.gif )
+}
+.icon-deactivate {
+	background-image: url(../images/divo/trash.gif )
+}
+.icon-select{
+	background-image: url(../images/divo/publish.gif )
+}
+.icon-undo {
+	background-image: url(../images/divo/undo.gif )
+}
+.icon-doc {
+	background-image: url(../images/version.gif )
+}
+.icon-email {
+	background-image: url(../images/email.gif )
+}
+.icon-source {
+	background-image: url(../images/cog.png )
+}
+.icon-action {
+	background-image: url(../images/settings.png )
+}
+.icon-valid {
+	background-image: url(../images/publish.gif )
+}
+.icon-invalid {
+	background-image: url(../images/redcross.gif )
+}
+.icon-none {
+	background-image: url(../images/file.gif )
+}
+.icon-out-of-scope {
+	background-image: url(../images/move_file.gif )
+}
+.icon-no-result {
+	background-image: url(../images/divo/file-remove.gif )
+}
+.icon-audit {
+	background-image: url(../images/export.gif )
+}
+.icon-preview {
+	background-image: url(../images/silk/printer.png )
+}
+.icon-user {
+	background-image: url(../images/user.gif )
+}
+.icon-info {
+	background-image: url(../images/version.gif )
+}
+.icon-win {
+	background-image: url(../images/divo/win.gif )
+}
+.icon-detail {
+	background-image: url(../images/search.gif )
+}
+.icon-pic {
+	background-image: url(../images/block-image.gif)
+}
+.icon-down{
+	background: url('../images/arrow_down.gif');
+}
+.icon-up{
+	background: url('../images/arrow_up.gif');
+}
+.icon-add {
+	background: url('../images/divo/add.gif');
+}
+.icon-script {
+	background: url('../images/silk/script.png');
+}
+.icon-checked {
+    background-image: url(../images/divo/checked2.gif )
+}
+.icon-unchecked {
+    background-image: url(../images/divo/unchecked2.gif )
+}
+

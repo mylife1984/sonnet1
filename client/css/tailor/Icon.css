@@ -1,0 +1,16 @@
+/* 修理 */
+.icon-vehicle-repair {
+	background-image: url(../images/silk/wrench.png )
+}
+/* 出动 */
+.icon-vehicle-out {
+	background-image: url(../images/divo/busy.png )
+}
+/* 执勤 */
+.icon-vehicle-ready {
+	background-image: url(../images/online.png)
+}
+/* 公务 */
+.icon-vehicle-train {
+	background-image: url(../images/silk/car.png )
+}

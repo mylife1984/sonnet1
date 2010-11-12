@@ -1,0 +1,164 @@
+/* 获取与 FengOffice 一样的 tab 效果 */
+.x-layout-collapsed{
+    border:0px;
+}
+#tabs-panel .x-panel-body-noheader, .x-panel-mc .x-panel-body {
+    border-top:0px;
+}
+.x-panel-body{
+	background-color: #F0F0F0;	
+}
+.x-tab-panel-header, .x-tab-panel-footer {
+	border: 0px;
+}
+.x-tab-panel-header {
+	border: 0px;
+	padding-bottom: 0px;
+}
+.x-tab-panel-body {
+    border: 0px;
+}
+
+/*--- tabpanel style ---*/
+.og-content-panel .x-toolbar {
+    background: #F0F0F0;
+    border-top: 0px none;
+    padding-top:5px;
+}
+
+.og-content-panel .x-tree .x-panel-tbar .x-toolbar {
+    border-top: 1px solid #99BBE8;
+}
+
+.og-content-panel .x-panel-bbar .x-toolbar {
+    background: transparent;
+    border-top: 0px none;
+}
+
+/*--- home ----*/
+#header {
+    background-color: white;
+    height: 55px;
+    overflow: hidden;
+}
+#footer {
+    height: 20px;
+    color: #666;
+    FONT-FAMILY: 'tahoma','宋体';
+    font-size:11px;
+    overflow: hidden;
+}
+#headerContent {
+    background-position: 2px 3px;
+    background-image: url(../images/goo/header_bottom.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    height: 55px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    text-align: left;
+}
+.headerLogoAndWorkspace {
+    float: left;
+}
+#logodiv {
+    background-image: url(../images/goo/logo.png);
+    position: relative;
+    margin: 5 auto;
+    text-align: left;
+    background-repeat: no-repeat;
+    height: 45px;
+    width: 45px;
+    margin-left: 15px;
+    margin-top:1px;
+}
+#wsCrumbsDiv {
+    position: relative;
+    height: 45px;
+    padding-top:0;
+}
+#userboxWrapper {
+    position: absolute;
+    top: 1px;
+    right: 0px;
+    font-size: 14px; 
+    FONT-FAMILY: 'tahoma','宋体';
+}
+
+#userbox {
+    background-image: url(../images/goo/userborder.png);
+    padding-bottom:8px;
+    padding-left: 10px;
+    padding-right: 0px;
+    padding-top:-20px;
+    margin-right:0px;
+}
+#copy {
+    padding: 2px 15px;
+    float: left;
+}
+
+/*---------- top message div ----------*/
+#msg-div {
+    position: absolute;
+    left: 35%;
+    width: 30%;
+    z-index:20000;
+    text-align:center;
+    cursor: pointer;
+}
+#msg-div h3 {
+    float: left;
+    margin-right: 5px;
+}
+#msg-div .err h3 {
+    color: #AA0000;
+}
+#msg-div .reminder h3 {
+    color: #008800;
+}
+.og-box-tl {
+    background: url(../images/goo/box/corners.png) no-repeat top left;
+    padding-left: 4px;
+}
+.og-box-tc {
+    padding-top: 4px;
+    background: #fffbbb;
+    border-top: 1px solid #E1B269;
+}
+.og-box-tr {
+    background: url(../images/goo/box/corners.png) no-repeat top right;
+    padding-right: 4px;
+}
+.og-box-ml {
+    padding-left: 4px;
+    background: #fffbbb;
+    border-left: 1px solid #E1B269;
+}
+.og-box-mc {
+    background: #fffbbb;
+    FONT-FAMILY: 'tahoma','宋体';
+    font-size: 14px;
+}
+.og-box-mr {
+    padding-right: 4px;
+    background: #fffbbb;
+    border-right: 1px solid #E1B269;
+}
+.og-box-bl {
+    padding-left: 4px;
+    background:transparent url(../images/goo/box/corners.png) no-repeat scroll bottom left;zoom:1;
+    
+}
+.og-box-bc {
+    padding-bottom: 4px;
+    background: #fffbbb;
+    border-bottom: 1px solid #E1B269;
+}
+.og-box-br {
+    padding-right: 4px;
+    background:transparent url(../images/goo/box/corners.png) repeat bottom right;zoom:1;
+}
+/* EOP */
+

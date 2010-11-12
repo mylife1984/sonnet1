@@ -1,0 +1,89 @@
+/* Ext.ux.UploadDialog 用 */
+.ext-ux-uploaddialog-addbtn
+{
+	background: url('../images/divo/file-add.gif') no-repeat left center !important;
+}
+
+.ext-ux-uploaddialog-removebtn
+{
+	background: url('../images/divo/file-remove.gif') no-repeat left center !important;
+}
+
+.ext-ux-uploaddialog-resetbtn
+{
+	background: url('../images/divo/reset.gif') no-repeat left center !important;
+}
+
+.ext-ux-uploaddialog-uploadstartbtn
+{
+	background: url('../images/divo/upload-start.gif') no-repeat left center !important;
+}
+
+.ext-ux-uploaddialog-uploadstopbtn
+{
+	background: url('../images/divo/upload-stop.gif') no-repeat left center !important;
+}
+
+.ext-ux-uploaddialog-indicator-stoped
+{
+	width: 16px;
+	height: 16px;
+	background: url('../images/divo/done.gif') no-repeat center center;
+}
+
+.ext-ux-uploaddialog-indicator-processing
+{
+	width: 16px;
+	height: 16px;	
+	background: url('../images/divo/loading.gif') no-repeat center center;
+}
+
+.ext-ux-uploaddialog-state
+{
+	text-align: center;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+/* Queued */
+.ext-ux-uploaddialog-state-0
+{
+	background-image: url('../images/divo/uncheck.gif');
+}
+
+/* Finished */
+.ext-ux-uploaddialog-state-1
+{
+	background-image: url('../images/divo/check.gif');
+}
+
+/* Failed */
+.ext-ux-uploaddialog-state-2
+{
+	background-image: url('../images/divo/failed.gif');
+}
+
+/* Processing */
+.ext-ux-uploaddialog-state-3
+{
+	background-image: url('../images/divo/file-uploading.gif');	
+}
+
+/* Progress bar fix */
+.ext-ie7 .ext-ux-uploaddialog-dialog .x-progress-bar .x-progress-text div
+{
+	display: none;
+}
+
+.ext-ie7 .ext-ux-uploaddialog-dialog .x-progress-text-back
+{
+	position: absolute;
+	left: 0px;
+	right: 0px;
+}
+
+.ext-ie7 .ext-ux-uploaddialog-dialog .x-progress-text-back div
+{
+	width: auto !important;
+	white-space: nowrap;
+}
