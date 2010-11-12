@@ -1,7 +1,7 @@
 /**
  * 常用图标路径
  */
-divo.iconUrl = "/public/images/"
+divo.iconUrl = "images/"
 
 Ext.apply(divo,
 {

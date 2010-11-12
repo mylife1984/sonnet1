@@ -8,11 +8,11 @@ divo.homeApp = function() {
 	return {
         init: function(){
             if (Ext.isIE)
-                Ext.util.CSS.swapStyleSheet("css-patch","public/css/ie-patch.css?v=1")
+                Ext.util.CSS.swapStyleSheet("css-patch","css/ie-patch.css?v=1")
             if (Ext.isChrome)
-                Ext.util.CSS.swapStyleSheet("css-patch","public/css/chrome-patch.css?v=1")
+                Ext.util.CSS.swapStyleSheet("css-patch","css/chrome-patch.css?v=1")
             if (Ext.isGecko)
-                Ext.util.CSS.swapStyleSheet("css-patch","public/css/firefox-patch.css?v=1")
+                Ext.util.CSS.swapStyleSheet("css-patch","css/firefox-patch.css?v=1")
 
             new divo.home.Main({
                  id : 'home-app'
@@ -59,7 +59,7 @@ divo.home.Main = Ext.extend(Ext.Viewport, {
 				}),	{
 					region: 'west',
 					id: 'menu-panel',
-					title: '<img src="public/images/silk/application_double.png" />&nbsp;菜单导航',
+					title: '<img src="images/silk/application_double.png" />&nbsp;菜单导航',
 					collapsedTitle : '菜单导航',
 					split: true,
 					stateful :  true,

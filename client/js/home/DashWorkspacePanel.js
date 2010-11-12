@@ -10,7 +10,7 @@ divo.home.DashWorkspacePanel = Ext.extend(divo.home.DashWorkspaceBasePanel, {
 '</div>',
 '<div class="dashActions">',
 '	<a class="internalLink" href="#">',
-'		<div id="dash-refresh" class="viewRefresh"><img src="/public/images/divo/refresh.gif"/>&nbsp;刷新</div>',
+'		<div id="dash-refresh" class="viewRefresh"><img src="images/divo/refresh.gif"/>&nbsp;刷新</div>',
 '	</a>',
 '</div>',
 '',
