@@ -1,0 +1,16 @@
+TODO
+====
+
+2010-11-12
+----------
+
+  1. https://github.com/danwrong/restler
+     web层和数据库访问层分开为两个项目, 本项目为web层，用restler访问
+  
+  2. 单独实现一个项目作为数据库访问层，提供restful服务。
+     (sonnet11-sqlite
+      sonnet12-mysql
+      sonnet13-mongodb
+      ) 
+  
+ -END-
