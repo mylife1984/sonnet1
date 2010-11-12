@@ -77,9 +77,29 @@ module.exports = {
         assert.response(server, req, res, function(res) {
             var resp = JSON.parse(res.body)  //builtin JSON 
             assert.ok(resp.success);
+            assert.equal(resp.rows,0);
+            assert.equal(JSON.stringify(resp),'{"success":true,"rows":0}')
+        });
+    }
+    //
+    //expresso * -o 'can_show_get_remote_json_data'
+    //
+    ,'can_show_get_remote_json_data' : function(assert) {
+        var req = {
+            url : '/remotejson',
+            method : 'GET'
+        }
+        var res = {
+            status : 200,
+            headers : {
+                'Content-Type' : 'application/json'
+            }
+        }
+        assert.response(server, req, res, function(res) {
+            var resp = JSON.parse(res.body)  //builtin JSON 
+            assert.ok(resp.success);
             assert.equal(JSON.stringify(resp),'{"success":true}')
         });
-            
     }
 };
 
