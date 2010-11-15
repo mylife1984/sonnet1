@@ -2,7 +2,7 @@ This project is just for learning expressjs web framework.
 
 # Install dependencies
 	
-	$ npm install express ejs expresso
+	$ npm install express ejs
 	
 # Checkout the source
 
@@ -20,7 +20,7 @@ This project is just for learning expressjs web framework.
 
 	$ cd sonnet1
 	
-	$ expresso tests/**/*
+	$ ./test-all
 
 # Documentation
 

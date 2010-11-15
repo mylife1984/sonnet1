@@ -1,0 +1,8 @@
+#! /bin/sh 
+
+node tests/lib/test-flow.js
+node tests/lib/test-lang.js
+node tests/lib/test-node-global.js
+node tests/lib/test-underscore.js
+
+node tests/demo/test-home.js

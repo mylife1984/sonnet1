@@ -1,31 +1,37 @@
 /**
  * 单元测试：JS语言本身
  */
+var async_testing = require('./../../lib/async_testing/async_testing')
+    
+if (module == require.main) {
+  return async_testing.run(process.ARGV);
+} 
+
 module.exports = {
 	//
-	//expresso * -o 'can_use_constructor'
+	//node test-lang.js --test-name 'can_use_constructor'
 	//
-	'can_use_constructor' : function(assert) {
+	'can_use_constructor' : function(test) {
 		//对象实例的constructor是对象内置属性（或称元属性）之一，它的值总是指向创建当前对象的构造函数。
 		var arr = [1, 56, 34, 12];
-		assert.ok(arr.constructor === Array);
-		assert.equal(typeof arr.constructor,"function")  
+		test.ok(arr.constructor === Array);
+		test.equal(typeof arr.constructor,"function")  
 		
 		var Foo = function() { };  
-		assert.ok(Foo.constructor === Function);  
-		assert.equal(typeof Foo.constructor,"function")  
+		test.ok(Foo.constructor === Function);  
+		test.equal(typeof Foo.constructor,"function")  
 
 		function Foo() { };  
-		assert.ok(Foo.constructor === Function);  
-		assert.equal(typeof Foo.constructor,"function")  
+		test.ok(Foo.constructor === Function);  
+		test.equal(typeof Foo.constructor,"function")  
 		
 		var obj = new Foo();  
-		assert.ok(obj.constructor === Foo);		
-		assert.equal(typeof obj.constructor,"function")  
+		test.ok(obj.constructor === Foo);		
+		test.equal(typeof obj.constructor,"function")  
 		
 		var blankObj = {} //相当于 new Object()
-		assert.ok(blankObj.constructor === Object);		
-		assert.equal(typeof blankObj.constructor,"function")  
+		test.ok(blankObj.constructor === Object);		
+		test.equal(typeof blankObj.constructor,"function")  
 		
 		function Person(name) {  
 		    this.name = name;  
@@ -34,8 +40,8 @@ module.exports = {
 		    return this.name;  
 		};  //向原型对象添加方法
 		var p = new Person("ZhangSan");  
-		assert.ok(Person.prototype.constructor === Person,"每个函数的prototype的constructor默认指向这个函数");
-		assert.ok(p.constructor === Person,"因为有了上一条，才有这一条!");
+		test.ok(Person.prototype.constructor === Person,"每个函数的prototype的constructor默认指向这个函数");
+		test.ok(p.constructor === Person,"因为有了上一条，才有这一条!");
 		
 		Person.prototype = {  
 		    getName: function() {  
@@ -43,29 +49,30 @@ module.exports = {
 		    }  
 		}; //重新创建了一个新的原型对象（相当于 new Object...)
 		var p = new Person("ZhangSan");  
-		assert.ok(Person.prototype.constructor !== Person);
-		assert.ok(Person.prototype.constructor === Object);
-		assert.ok(p.constructor === Object,"constructor也会像一般属性一样查找到原型对象的constructor");
+		test.ok(Person.prototype.constructor !== Person);
+		test.ok(Person.prototype.constructor === Object);
+		test.ok(p.constructor === Object,"constructor也会像一般属性一样查找到原型对象的constructor");
+		test.finish()
 	}
 	//
-	//expresso * -o 'can_use_function'
+	//node test-lang.js --test-name 'can_use_function'
 	//
 	//Thanks: http://www.permadi.com/tutorial/jsFunc/index.html
-	,'can_use_function' : function(assert) {
+	,'can_use_function' : function(test) {
 		//在许多其他语言中，函数都只是语法特性，它们可以被定义、被调用，但却不是数据类型。
 		//JS中，函数是一个真正的数据类型。
 		var addVar = function(a, b) {  return a+b; }
-		assert.equal(addVar(1,2),3,"函数申明方法之一")
-		assert.equal(typeof addVar,"function")  
-		assert.ok(addVar instanceof Function);		
+		test.equal(addVar(1,2),3,"函数申明方法之一")
+		test.equal(typeof addVar,"function")  
+		test.ok(addVar instanceof Function);		
 		
 		function addObject(a, b) { return a+b;}                     
-		assert.equal(addObject(1,2),3,"函数申明方法之二")
-		assert.equal(typeof addObject,"function")
-		assert.ok(addObject instanceof Function);
+		test.equal(addObject(1,2),3,"函数申明方法之二")
+		test.equal(typeof addObject,"function")
+		test.ok(addObject instanceof Function);
 		
 		var addFunction = new Function("a", "b", "return a+b;");
-		assert.equal(addFunction(1,2),3,"函数申明方法之三") 
+		test.equal(addFunction(1,2),3,"函数申明方法之三") 
 		
 		function createMyFunction(myOperator) {
 		  return new Function("a", "b", "return a" + myOperator + "b;");
@@ -73,38 +80,39 @@ module.exports = {
 		var add = createMyFunction("+");                // creates "add" function
 		var subtract = createMyFunction("-");           // creates "subtract" function
 		var multiply = createMyFunction("*");           // created "multiply" function
-		assert.equal(add(10,2),12);   
-		assert.equal(subtract(10,2),8);
-		assert.equal(multiply(10,2),20); 
+		test.equal(add(10,2),12);   
+		test.equal(subtract(10,2),8);
+		test.equal(multiply(10,2),20); 
 		
 		function Ball() { }
 		Ball.callsign="The Ball";
-		assert.equal(Ball.callsign,"The Ball","Ball是对象，可是向对象添加属性")
+		test.equal(Ball.callsign,"The Ball","Ball是对象，可是向对象添加属性")
 		
 		function myFunction() { 
   			return myFunction.message;
 		}
 		myFunction.message="old";	
-		assert.equal(myFunction(),"old","函数体对可以引用自身对象中的属性")
+		test.equal(myFunction(),"old","函数体对可以引用自身对象中的属性")
 		
 		function Ball() {}
 		var ball0 = new Ball(); // new操作符创建类型为Object的对象，然后执行Ball()。
-		assert.equal(typeof ball0,"object","函数作为构造函数创建新的对象");
-		assert.ok(ball0 instanceof Ball);   //Ball 是 ball0 对象的类型
-		assert.ok(ball0 instanceof Object); //Object 也是 ball0 对象的类型		
-		assert.ok(ball0.constructor === Ball);		
+		test.equal(typeof ball0,"object","函数作为构造函数创建新的对象");
+		test.ok(ball0 instanceof Ball);   //Ball 是 ball0 对象的类型
+		test.ok(ball0 instanceof Object); //Object 也是 ball0 对象的类型		
+		test.ok(ball0.constructor === Ball);		
 		
 		function Ball(specifiedName) {
 		  this.name = specifiedName;          //this 指向被创建的对象      
 		}
 		var ball0 = new Ball("Soccer Ball");  
-		assert.equal(ball0.name,"Soccer Ball")		
+		test.equal(ball0.name,"Soccer Ball")		
+		test.finish()
 	}
 	//
-	//expresso * -o 'can_use_prototype'
+	//node test-lang.js --test-name 'can_use_prototype'
 	//
 	//Thanks: 《JavaScript王者归来》p523起
-	,'can_use_prototype' : function(assert) {
+	,'can_use_prototype' : function(test) {
 		//“照猫画虎”: 猫是原型(prototype)，而虎是类型，也就是“虎.prototype= new 猫()”！
 		//
 		//描述自然界事物之间的“归类”关系，可以使用“继承”、“接口”和“原型”三种方法：
@@ -123,10 +131,10 @@ module.exports = {
 		}
 		var p1 = new Point(1,2),p2 = new Point(3,4)
 		Point.prototype.z = 0 //动态为Point的原型添加了属性
-		assert.equal(p1.z,0)
-		assert.equal(p1.z,0)
+		test.equal(p1.z,0)
+		test.equal(p1.z,0)
 		
-		assert.ok(p1.prototype==undefined,"The prototype of an object is an internal property")
+		test.ok(p1.prototype==undefined,"The prototype of an object is an internal property")
 		
 		//
 		//尽量采用 prototype 定义对象方法，可以避免在构造函数中构造方法的额外开销。
@@ -139,14 +147,15 @@ module.exports = {
   			return this.salary;
 		}
 		var boss1=new Employee("Joan", 200000);
-		assert.equal(boss1.getSalary(),200000)		
+		test.equal(boss1.getSalary(),200000)	
+		test.finish()
 	}
 	//
-	//expresso * -o 'can_use_instanceof'
+	//node test-lang.js --test-name 'can_use_instanceof'
 	//
 	//Thanks: http://blog.csdn.net/xujiaxuliang/archive/2009/10/22/4713004.aspx
 	//Thanks: http://joost.zeekat.nl/constructors-considered-mildly-confusing.html
-	,'can_use_instanceof' : function(assert) {
+	,'can_use_instanceof' : function(test) {
 		//每个对象都会有一个内部的属性_proto_(虚拟机内部使用), 
 		//每当创建一个对象的时候，这个对象的_proto_就会被赋值为这个对象的构造函数的prototype.
 		//一旦对象创建完成，_proto_属性就不会改变。
@@ -159,17 +168,17 @@ module.exports = {
  		MyConstructor.prototype = {};
  		var myobject = new MyConstructor(); //_proto_ 等于 {}
  		
-   		assert.ok(MyConstructor.constructor === Function)
- 		assert.ok(myobject instanceof MyConstructor) // MyConstructor.prototype 等于 myobject 的 _proto_, 所以返回真。
-   		assert.ok(myobject.constructor === Object) //注意不是 MyConstructor!
+   		test.ok(MyConstructor.constructor === Function)
+ 		test.ok(myobject instanceof MyConstructor) // MyConstructor.prototype 等于 myobject 的 _proto_, 所以返回真。
+   		test.ok(myobject.constructor === Object) //注意不是 MyConstructor!
 		
 		function MyConstructor() {}
  		var myobject = new MyConstructor(); //_proto_ 等于 {} （空对象）
  		MyConstructor.prototype = {}; //创建了一个新的空对象
  		
- 		assert.ok(!(myobject instanceof MyConstructor)) //为何是false? 因为 MyConstructor.prototype 
+ 		test.ok(!(myobject instanceof MyConstructor)) //为何是false? 因为 MyConstructor.prototype 
 												   		 //不等于 myobject 的 _proto_(虽然都是空对象）
-   		assert.ok(myobject.constructor == Object)
+   		test.ok(myobject.constructor == Object)
    		
 		function Class1(){ };   
 		function Class2(){ };   
@@ -177,14 +186,15 @@ module.exports = {
 		var obj1 = new Class2();   
 		Class2.prototype = new Class1(); //创建了一个新的对象   
 		var obj2 = new Class2();   
-		assert.ok(!(obj1 instanceof Class2)); //为何是false？原因与上面相同。   
-		assert.ok(obj2 instanceof Class2);     		
+		test.ok(!(obj1 instanceof Class2)); //为何是false？原因与上面相同。   
+		test.ok(obj2 instanceof Class2);     
+		test.finish()
 	}
 	//
-	//expresso * -o 'can_functional_programming'
+	//node test-lang.js --test-name 'can_functional_programming'
 	//
 	//Thanks: http://www.jzxue.com/wangzhankaifa/javascript-ajax/201006/28-3996.html
-	,'can_functional_programming' : function(assert) {
+	,'can_functional_programming' : function(test) {
 		//1.匿名函数
 		function map(array, func){ 
 		 	 var res = []; 
@@ -196,7 +206,7 @@ module.exports = {
 		var mapped = map([1, 3, 5, 7, 8],  function (n){
 			  return n = n + 1; 
 		});  
-		assert.equal(mapped.join(","),"2,4,6,8,9","对数组中每一个元素加 1")
+		test.equal(mapped.join(","),"2,4,6,8,9","对数组中每一个元素加 1")
 		
 		//2.柯里化(currying)
 		//柯里化是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，
@@ -208,8 +218,8 @@ module.exports = {
 		} 
 		var add5 = adder(5); 
 		var add6 = adder(6);
-		assert.equal(add5(1),6)
-		assert.equal(add6(1),7)
+		test.equal(add5(1),6)
+		test.equal(add6(1),7)
 		
 		//下面的抛物线的例子，更能说明柯里化如何使函数定义方式同数学语言描述方式的一致性
 		//如果不用柯里化编程方式，也可实现同样的功能，但显然无法达到同样的效果！
@@ -219,12 +229,13 @@ module.exports = {
 			}
 		}
   		var p1 = parabola(2,3,4)
-  		assert.equal(p1(15),499,"已知抛物线公式，代入变量x，得到结果")
+  		test.equal(p1(15),499,"已知抛物线公式，代入变量x，得到结果")
+  		test.finish()
 	}
 	//
-	//expresso * -o 'can_use_arguments'
+	//node test-lang.js --test-name 'can_use_arguments'
 	//
-	,'can_use_arguments' : function(assert) {
+	,'can_use_arguments' : function(test) {
 		function format(string) {
 			var args = arguments; //为了让replace的闭包中访问arguments，所以要先保存到一个局部变量中 			
 			//arguments是一个对象, 例如：
@@ -240,13 +251,14 @@ module.exports = {
 		  	});
 		};
 		var str = format("And the %1 want to know whose %2 you %3", "papers", "shirt", "wear");
-		assert.equal(str,"And the papers want to know whose shirt you wear")
+		test.equal(str,"And the papers want to know whose shirt you wear")
+		test.finish()
 	}
 	//
-	//expresso * -o 'can_use_array'
+	//node test-lang.js --test-name 'can_use_array'
 	//
-	,'can_use_array' : function(assert) {
-		
+	,'can_use_array' : function(test) {
+		test.finish()
 	}
 }
 //EOP
