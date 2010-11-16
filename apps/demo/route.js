@@ -3,12 +3,18 @@
  */
  
 var server = module.parent.exports
-
-var service = require('./home'); 
-
+   ,service = require('./home')
+   
+function requireLogin(req, res, next) {
+	  if(req.user.authenticated) {
+	  	 console.log('login ok');
+	  	 next();
+	  }
+}
+   
 server.get('/', service.showIndex);
 
-server.get('/json', service.getJsonData);
+server.get('/json', requireLogin, service.getJsonData);
 
 server.get('/remotejson', service.getRemoteJsonData);
 

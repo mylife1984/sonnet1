@@ -1,0 +1,29 @@
+认证设计思路
+===========
+
+中间件的作用
+-----------
+
+  1. 识别 request 中是否带有 authorization，
+         查询参数中是否带 auth,
+         cookies 中是否带 auth
+     如果都没有带，则 req.user = AnonUser() (匿名用户），返回。
+     否则转下一步。
+     
+  2. 解析出用户名和密码。
+     调用远程服务进行认证检查。    
+     认证通过，则在 request.user 中放入User对象（authenticated=true,roles中有角色列表)。
+     认证没有通过，则在 request.user 中放入 BadUser()    
+
+requireLogin 的作用
+------------------
+
+     只要判断 req.user.authenticated 属性即可, 然而决定respone转向。
+     
+requireRole 的作用
+------------------
+     
+     只要判断 req.user.roles 中是否和指定role相符。
+     
+
+ -END-

@@ -3,6 +3,7 @@
  */
 var server = require('../../server')
     ,async_testing = require('./../../lib/async_testing/async_testing')
+    ,Buffer = require('buffer').Buffer
     
 if (module == require.main) {
   return async_testing.run(process.ARGV);
@@ -71,9 +72,16 @@ module.exports = {
      * node test-home.js --test-name "can get json data"
      */
     ,'can get json data' : function(test) {
+        var username = 'Test';
+        var password = '123';
+        //auth is: 'Basic VGVzdDoxMjM='
+        var auth = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
         var req = {
             url : '/json',
-            method : 'GET'
+            method : 'GET',
+            headers : {
+                'Authorization' : auth
+            }
         }
         var res = {
             status : 200,

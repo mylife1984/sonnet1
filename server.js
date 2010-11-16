@@ -4,31 +4,33 @@
 require.paths.unshift(__dirname);
 require.paths.unshift(__dirname+"/lib");
 
-var express = require('express'),
-	sys = require('sys'),
-	fs = require('fs'),
-	log = require('util/log'),
-	objToHTML = require('util/prettyJSON');
-
+var express = require('express')
+	,sys = require('sys')
+	,fs = require('fs')
+	,log = require('util/log')
+	,objToHTML = require('util/prettyJSON')
+  
 //This makes it accessible to your child module through module.parent.exports.
 //
 //例如：
 //var app = module.parent.exports 
 //app.get('/user/', function(req, res){ ...
 //
-var server = module.exports = express.createServer()
+var server = module.exports = express.createServer(
+    function(req, res,next) {
+      req.user = {authenticated:true}
+      next() 
+    }
+)
 
 //in case of crash. I've never seen this used, got it from somebody else's code.
 process.title = 'sonnet1';
 process.addListener('uncaughtException', function (err, stack) {
     console.log("EXCEPTION: please see log.txt");
     //console.log(stack);
-    log('*************************************');
     log('************EXCEPTION****************');
-    log('*************************************');
     err.message && log(err.message);
     err.stack && log(err.stack);
-    log('*************************************');
 });
 
 //配置
@@ -42,8 +44,7 @@ server.configure('production', function(){
    server.use(express.errorHandler()); 
 });
 
-server.configure(function(){
-	
+server.configure(function(){	
     server.set('views', __dirname + '/views');
     
     //提供给view使用
@@ -76,14 +77,11 @@ server.configure(function(){
 server.error(function(err, req, res, next){
 	    var url = 'http://' + req.headers.host + req.url;
         if (err.message != 'EISDIR, Is a directory') {
-            log('*************************************');
             log('****************ERROR****************');
-            log('*************************************');
             log(url);
             err.message && log(err.message);
             err.arguments && log(err.arguments);
             err.stack && log(err.stack);
-            log('*************************************');
         }
         if (server.get('env') == 'production') {
             res.redirect('/');
