@@ -1,7 +1,7 @@
 /**
  * home
  */
-var rest = require('restler/restler')
+var rest = require('restler')
     ,settings = require('settings')
 
 //显示主页 

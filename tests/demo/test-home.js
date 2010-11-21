@@ -2,7 +2,7 @@
  * 单元测试: demo/home.js
  */
 var server = require('../../server')
-    ,async_testing = require('./../../lib/async_testing/async_testing')
+    ,async_testing = require('./../../lib/async_testing')
     ,Buffer = require('buffer').Buffer
     
 if (module == require.main) {
