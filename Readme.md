@@ -2,7 +2,7 @@ This project is just for learning expressjs web framework.
 
 # Install dependencies
 	
-	$ npm install express ejs
+	$ npm install express ejs log4js
 	
 # Checkout the source
 

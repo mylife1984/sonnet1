@@ -7,7 +7,7 @@ require.paths.unshift(__dirname+"/lib");
 var express = require('express')
 	,sys = require('sys')
 	,fs = require('fs')
-	,log = require('util/log')
+	,logger = require('util/log')
 	,objToHTML = require('util/prettyJSON')
   
 //This makes it accessible to your child module through module.parent.exports.
@@ -27,20 +27,20 @@ var server = module.exports = express.createServer(
 process.title = 'sonnet1';
 process.addListener('uncaughtException', function (err, stack) {
     console.log("EXCEPTION: please see log.txt");
-    //console.log(stack);
-    log('************EXCEPTION****************');
-    err.message && log(err.message);
-    err.stack && log(err.stack);
+    console.log(stack);
+    logger.fatal('************EXCEPTION****************');
+    err.message && logger.fatal(err.message);
+    err.stack && logger.fatal(err.stack);
 });
 
 //配置
 server.configure('development', function(){
-    log('running in development mode');
+    logger.debug('running in development mode');
     //server.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
 });
 
 server.configure('production', function(){
-   log('running in production mode');
+   logger.debug('running in production mode');
    server.use(express.errorHandler()); 
 });
 
@@ -62,7 +62,7 @@ server.configure(function(){
     server.register('.html', require('ejs'));
     server.set('view engine', 'html');
     
-    server.use(express.logger({ format: ':method :url :status' }));
+    //server.use(express.logger({ format: ':method :url :status' }));
     server.use(express.bodyDecoder());
     server.use(express.methodOverride());
     server.use(express.cookieDecoder());        
@@ -77,11 +77,11 @@ server.configure(function(){
 server.error(function(err, req, res, next){
 	    var url = 'http://' + req.headers.host + req.url;
         if (err.message != 'EISDIR, Is a directory') {
-            log('****************ERROR****************');
-            log(url);
-            err.message && log(err.message);
-            err.arguments && log(err.arguments);
-            err.stack && log(err.stack);
+            logger.error('****************ERROR****************');
+            logger.error(url);
+            err.message && logger.error(err.message);
+            err.arguments && logger.error(err.arguments);
+            err.stack && logger.error(err.stack);
         }
         if (server.get('env') == 'production') {
             res.redirect('/');

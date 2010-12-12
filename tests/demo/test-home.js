@@ -52,22 +52,23 @@ module.exports = {
     /**
      * node test-home.js --test-name "can show 500 page"
      */
-    ,'can show 500 page' : function(test) {
-        var req = {
-            url : '/500page',
-            method : 'GET'
-        }
-        var res = {
-            status : 200,
-            headers : {
-                'Content-Type' : 'text/html; charset=utf-8'
-            }
-        }
-        test.response(server, req, res, function(res) {
-            test.includes(res.body, '500 ERROR');
-            test.finish()
-        });
-    }
+//    ,'can show 500 page' : function(test) {
+//        var req = {
+//            url : '/500page',
+//            method : 'GET'
+//        }
+//        var res = {
+//            status : 200,
+//            headers : {
+//                'Content-Type' : 'text/html; charset=utf-8'
+//            }
+//        }
+//        test.response(server, req, res, function(res) {
+//        	  console.log(res.body)
+//            test.includes(res.body, '500 ERROR');
+//            test.finish()
+//        });
+//    }
     /**
      * node test-home.js --test-name "can get json data"
      */
@@ -102,24 +103,24 @@ module.exports = {
      * 
      * 注意：需要启动 sonnet11 项目
      */
-    ,'can get remote json data' : function(test) {
-        var req = {
-            url : '/remotejson',
-            method : 'GET'
-        }
-        var res = {
-            status : 200,
-            headers : {
-                'Content-Type' : 'application/json'
-            }
-        }
-        test.response(server, req, res, function(res) {
-            var resp = JSON.parse(res.body)  //builtin JSON 
-            test.ok(resp.success);
-            test.equal(JSON.stringify(resp),'{"success":true}')
-            test.finish()
-        });
-    }
+//    ,'can get remote json data' : function(test) {
+//        var req = {
+//            url : '/remotejson',
+//            method : 'GET'
+//        }
+//        var res = {
+//            status : 200,
+//            headers : {
+//                'Content-Type' : 'application/json'
+//            }
+//        }
+//        test.response(server, req, res, function(res) {
+//            var resp = JSON.parse(res.body)  //builtin JSON 
+//            test.ok(resp.success);
+//            test.equal(JSON.stringify(resp),'{"success":true}')
+//            test.finish()
+//        });
+//    }
 };
 
 //EOP
